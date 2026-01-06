@@ -1,0 +1,7 @@
+@use "../styles/sass/variables" as *;
+@use "../styles/sass/typography" as t;
+@use "../styles/sass/breakpoints" as mq;
+
+body {
+  background-image: url("../assets/home/background-home-mobile.jpg");
+}

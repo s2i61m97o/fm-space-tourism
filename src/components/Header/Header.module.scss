@@ -1,0 +1,9 @@
+@use "../../styles/sass/variables" as *;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
