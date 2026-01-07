@@ -4,7 +4,6 @@ import clsx from "clsx";
 import logo from "../../assets/logo.svg";
 import hamburger from "../../assets/icon-hamburger.svg";
 import close from "../../assets/icon-close.svg";
-
 import styles from "./Header.module.scss";
 
 export default function Header() {
