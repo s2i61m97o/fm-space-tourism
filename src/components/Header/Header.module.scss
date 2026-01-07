@@ -6,4 +6,52 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: $sp-6;
+
+  & img {
+    cursor: pointer;
+    float: right;
+    z-index: $z-2;
+  }
+}
+
+.header__offcanvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  background-color: rgba($color: $color-blue-950, $alpha: 0.3);
+  backdrop-filter: blur(10px);
+  visibility: hidden;
+  transform: translateX(100%);
+  padding: $sp-8 $sp-0 $sp-8 $sp-8;
+  transition: all 350ms ease-out;
+
+  @media (prefers-reduced-data: reduce) {
+    transition: none;
+  }
+}
+
+.header__offcanvasOpen {
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  gap: $sp-12;
+  margin-block-start: $sp-24;
+
+  & a {
+    text-decoration: none;
+    color: t.$color-primary;
+    @include t.font($font-secondary);
+    text-transform: uppercase;
+  }
+}
+
+span {
+  font-weight: 900;
 }
