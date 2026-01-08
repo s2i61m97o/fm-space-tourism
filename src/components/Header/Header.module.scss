@@ -42,7 +42,7 @@ hr {
 }
 
 .header__offcanvas {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -51,9 +51,15 @@ hr {
   transform: translateX(100%);
   padding: v.$sp-8 v.$sp-0 v.$sp-8 v.$sp-8;
   transition: all 350ms ease-out;
+  overflow: hidden;
+  z-index: v.$z-1;
 
   @media (prefers-reduced-data: reduce) {
     transition: none;
+  }
+
+  @include mq.md {
+    display: none;
   }
 }
 

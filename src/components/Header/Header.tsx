@@ -9,6 +9,7 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const screenSize = useScreenSize();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -16,13 +17,13 @@ export default function Header() {
 
   const navStyles = clsx(
     styles.header__nav,
-    useScreenSize() > 767
+    screenSize > 767
       ? styles.header__navbar
       : clsx(styles.header__offcanvas, menuOpen && styles.header__offcanvasOpen)
   );
 
   const activeStyle =
-    useScreenSize() > 767
+    screenSize > 767
       ? {borderBottom: "3px solid white"}
       : {borderRight: "3px solid white"};
 
@@ -31,8 +32,8 @@ export default function Header() {
       <Link to="/">
         <img src={logo} alt="logo" />
       </Link>
-      {useScreenSize() > 1023 && <hr />}
-      {useScreenSize() < 768 && (
+      {screenSize > 1023 && <hr />}
+      {screenSize < 768 && (
         <img
           src={menuOpen ? close : hamburger}
           alt="menu open icon"

@@ -1,4 +1,4 @@
-@use "../styles/sass/variables" as *;
+@use "../styles/sass/variables" as v;
 @use "../styles/sass/typography" as t;
 @use "../styles/sass/breakpoints" as mq;
 
@@ -6,4 +6,101 @@ body {
   background-image: url("/images/home/background-home-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  @include mq.sm {
+    background-image: url("/images/home/background-home-tablet.jpg");
+  }
+  @include mq.lg {
+    background-image: url("/images/home/background-home-desktop.jpg");
+  }
+}
+
+.container {
+  @include mq.lg {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-block: v.$sp-30;
+    @media (min-height: 715px) {
+      position: fixed;
+      bottom: 0;
+    }
+  }
+}
+
+.hero {
+  text-align: center;
+  color: v.$color-text-primary;
+  margin: v.$sp-8;
+
+  @include mq.lg {
+    text-align: left;
+    max-width: 30rem;
+  }
+
+  p {
+    color: t.$color-secondary;
+    @include t.font(
+      $font-size: clamp(v.$text-xs, 0.8715rem + 0.2817vw, v.$text-lg)
+    );
+    line-height: t.$lh-relaxed;
+  }
+}
+
+.title,
+.subtitle {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.title {
+  @include t.font(
+    $font-size: clamp(v.$text-5xl, 1.1832rem + 16.285vw, v.$text-7xl)
+  );
+  margin-block: v.$sp-6;
+  line-height: t.$lh-none;
+}
+
+.subtitle {
+  @include t.font(
+    $font-size: clamp(v.$text-base, 0.2844rem + 3.0534vw, v.$text-2xl)
+  );
+  color: t.$color-secondary;
+}
+
+.explore__container {
+  width: fit-content;
+  margin-inline: 50%;
+  transform: translateX(-50%);
+  margin-block: v.$sp-30;
+
+  @include mq.lg {
+    margin: 0;
+    transform: translate(0);
+  }
+}
+
+.explore {
+  text-decoration: none;
+  color: v.$color-blue-950;
+  text-transform: uppercase;
+  @include t.font(
+    $font-size: clamp(v.$text-lg, 0.2901rem + 3.5623vw, v.$text-3xl)
+  );
+}
+
+.explore__bkgd {
+  background-color: v.$color-white;
+  height: clamp(9rem, 6.1831rem + 12.0188vw, 17rem);
+  width: clamp(9rem, 6.1831rem + 12.0188vw, 17rem);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    box-shadow: 0 0 0 v.$sp-20 rgb(from v.$color-white r g b / 0.3);
+  }
 }

@@ -2,3 +2,10 @@
 @import "./styles/reset.css";
 /* @import "./foundation/base.css"; */
 /* @import "./foundation/utilities.css"; */
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  max-height: fit-content;
+}

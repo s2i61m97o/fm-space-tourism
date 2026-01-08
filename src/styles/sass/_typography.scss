@@ -7,3 +7,12 @@
 
 $color-primary: $color-text-primary;
 $color-secondary: $color-text-secondary;
+
+// LINE HEIGHTS
+
+$lh-none: var(--leading-none);
+$lh-tight: var(--leading-tight);
+$lh-snug: var(--leading-snug);
+$lh-normal: var(--leading-normal);
+$lh-relaxed: var(--leading-relaxed);
+$lh-loose: var(--leading-loose);
