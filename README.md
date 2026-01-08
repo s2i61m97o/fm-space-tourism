@@ -14,7 +14,7 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+<!-- - [Acknowledgments](#acknowledgments) -->
 
 ## Overview
 
@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
+<!-- - Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
 
 ## My process
 
@@ -45,20 +45,39 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- React Router
 - TypeScript
 
 ### What I learned
+
+### React Router
+
+This is the first project that I am using React Router.
+
+### TypeScript
+
+This is also the first project that I have used TypeScript in.
+
+### CSS Features:
+
+#### Using rgb(from)
+
+The syntax `rgb(from {color} r g b / alpha)` can be used to alter a preset color, including it's alpha value. I used this for the background colour of the navbar, as it has some transparency so I needed to alter the alpha value:
+
+```css
+background-color: rgb(from v.$color-white r g b / 0.05);
+```
 
 ### Continued development
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+<!-- - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept. -->
 
 ## Author
 
 - Frontend Mentor - [@s2i61m97o](https://www.frontendmentor.io/profile/s2i61m97o)
 - X - [@mattyjsimmo](https://www.x.com/mattyjsimmo)
 
-## Acknowledgments
+<!-- ## Acknowledgments -->
