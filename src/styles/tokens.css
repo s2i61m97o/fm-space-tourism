@@ -13,12 +13,13 @@
   --space-16: 4rem; /* 64px */
   --space-20: 5rem; /* 80px */
   --space-24: 6rem; /* 96px */
+  --space-40: 10rem; /* 160px */
 
   /* COLOR PALETTE */
 
   --color-blue-950: #0b0d17;
   --color-blue-300: #d0d6f9;
-  --color-white: #ffffff;
+  --color-white: rgb(255, 255, 255);
 
   /* Text Colors */
   --color-text-primary: var(--color-white);
