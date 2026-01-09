@@ -1,0 +1,41 @@
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.container {
+  margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+  text-align: center;
+  color: t.$color-primary;
+  @include t.font;
+
+  hr {
+    width: 100%;
+    border-color: v.$color-blue-300;
+    border-width: 0.5px;
+  }
+}
+
+.title {
+  @include t.font($font-size: v.$text-4xl);
+  text-transform: uppercase;
+}
+
+.description {
+  color: t.$color-secondary;
+  @include t.font(v.$font-body, v.$text-xs);
+  margin-block: v.$sp-4 v.$sp-6;
+}
+
+.infoContainer {
+  margin-block: v.$sp-6;
+
+  p {
+    text-transform: uppercase;
+    color: t.$color-secondary;
+  }
+
+  h2 {
+    @include t.font($font-size: v.$text-2xl);
+    margin-block-start: v.$sp-3;
+  }
+}

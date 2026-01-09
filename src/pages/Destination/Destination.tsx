@@ -1,5 +1,5 @@
-// import {useState} from "react";
 import {Navigate, useOutletContext, useParams} from "react-router";
+import styles from "./Destination.module.scss";
 
 type Destination = {
   name: string;
@@ -19,7 +19,6 @@ type DestinationContextType = {
 export default function Destination() {
   const {destinationData} = useOutletContext<DestinationContextType>();
   const currentDestination = useParams().planet;
-  console.log(currentDestination);
 
   const currentDestinationData = destinationData.find(
     (destination) => destination.name.toLowerCase() === currentDestination
@@ -30,15 +29,15 @@ export default function Destination() {
   }
 
   return (
-    <main>
-      <h1>{currentDestinationData.name}</h1>
-      <p>{currentDestinationData.description}</p>
+    <main className={styles.container}>
+      <h1 className={styles.title}>{currentDestinationData.name}</h1>
+      <p className={styles.description}>{currentDestinationData.description}</p>
       <hr />
-      <div>
+      <div className={styles.infoContainer}>
         <p>avg. distance</p>
         <h2>{currentDestinationData.distance}</h2>
       </div>
-      <div>
+      <div className={styles.infoContainer}>
         <p>est. travel time</p>
         <h2>{currentDestinationData.travel}</h2>
       </div>
