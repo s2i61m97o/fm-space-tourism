@@ -6,6 +6,7 @@ type Destination = {
   images: {
     png: string;
     webp: string;
+    alt: string;
   };
   description: string;
   distance: string;

@@ -1,0 +1,18 @@
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.title {
+  text-transform: uppercase;
+  color: t.$color-primary;
+  @include t.font(v.$font-secondary);
+  letter-spacing: 1px;
+  font-weight: 200;
+  text-align: center;
+  margin-block: v.$sp-12;
+
+  span {
+    color: rgb(from t.$color-primary r g b / 0.5);
+    margin-right: v.$sp-6;
+  }
+}

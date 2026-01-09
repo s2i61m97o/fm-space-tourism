@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router";
 import MasterLayout from "./components/Layouts/MasterLayout";
 import Home from "./pages/Home/Home";
 import DestinationLayout from "./components/Layouts/DestinationLayout";
-import Destination from "./pages/Destination/Destination";
+import Destination from "./pages/Destinations/Destination";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Route element={<MasterLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/destination" element={<DestinationLayout />}>
-            <Route index element={<Navigate to="moon" />} />
+            <Route index element={<Navigate to="moon" replace />} />
             <Route path=":planet" element={<Destination />} />
           </Route>
         </Route>

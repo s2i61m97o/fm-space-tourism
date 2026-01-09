@@ -22,11 +22,6 @@ export default function Header() {
       : clsx(styles.header__offcanvas, menuOpen && styles.header__offcanvasOpen)
   );
 
-  const activeStyle =
-    screenSize > 767
-      ? {borderBottom: "3px solid white"}
-      : {borderRight: "3px solid white"};
-
   return (
     <header className={styles.header}>
       <Link to="/">
@@ -44,24 +39,27 @@ export default function Header() {
       )}
       <div className={navStyles}>
         <nav className={styles.header__navMenu} id="nav-menu">
-          <NavLink to="/" style={({isActive}) => (isActive ? activeStyle : {})}>
+          <NavLink
+            to="/"
+            className={({isActive}) => (isActive ? "nav-active" : "")}
+          >
             <span>00</span> Home
           </NavLink>
           <NavLink
             to="/destination"
-            style={({isActive}) => (isActive ? activeStyle : {})}
+            className={({isActive}) => (isActive ? "nav-active" : "")}
           >
             <span>01</span> Destination
           </NavLink>
           <NavLink
             to="/crew"
-            style={({isActive}) => (isActive ? activeStyle : {})}
+            className={({isActive}) => (isActive ? "nav-active" : "")}
           >
             <span>02</span> Crew
           </NavLink>
           <NavLink
             to="/technology"
-            style={({isActive}) => (isActive ? activeStyle : {})}
+            className={({isActive}) => (isActive ? "nav-active" : "")}
           >
             <span>03</span> Technology
           </NavLink>
