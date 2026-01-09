@@ -1,9 +1,9 @@
 import "./App.css";
 import {BrowserRouter, Routes, Route, Navigate} from "react-router";
 import MasterLayout from "./components/Layouts/MasterLayout";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import DestinationLayout from "./components/Layouts/DestinationLayout";
-import Destination from "./pages/Destination";
+import Destination from "./pages/Destination/Destination";
 
 function App() {
   return (

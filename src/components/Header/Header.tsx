@@ -48,7 +48,7 @@ export default function Header() {
             <span>00</span> Home
           </NavLink>
           <NavLink
-            to="/destination/moon"
+            to="/destination"
             style={({isActive}) => (isActive ? activeStyle : {})}
           >
             <span>01</span> Destination

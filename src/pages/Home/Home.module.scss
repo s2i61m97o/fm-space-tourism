@@ -1,6 +1,6 @@
-@use "../styles/sass/variables" as v;
-@use "../styles/sass/typography" as t;
-@use "../styles/sass/breakpoints" as mq;
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
 
 body {
   background-image: url("/images/home/background-home-mobile.jpg");
