@@ -15,11 +15,9 @@ export default function Home() {
         </p>
       </section>
       <div className={styles.explore__container}>
-        <div className={styles.explore__bkgd}>
-          <Link to="/destination" className={styles.explore}>
-            Explore
-          </Link>
-        </div>
+        <Link to="/destination" className={styles.explore}>
+          <div className={styles.explore__bkgd}>Explore</div>
+        </Link>
       </div>
     </main>
   );
