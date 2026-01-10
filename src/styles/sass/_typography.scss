@@ -1,18 +1,57 @@
 @use "./variables" as *;
+@use "./breakpoints" as mq;
 
 @mixin font($font-family: $font-primary, $font-size: $text-base) {
   font-family: $font-family;
   font-size: $font-size;
 }
 
+@mixin route {
+  font-family: $font-secondary;
+  font-size: clamp($text-base, 0.7359rem + 1.1268vw, $text-2xl);
+  font-weight: 400;
+  @include mq.lg {
+    letter-spacing: 4px;
+  }
+}
+
+@mixin title {
+  font-family: $font-primary;
+  font-size: clamp($text-4xl, 2.0687rem + 6.1069vw, $text-5xl);
+  font-weight: 400;
+  @include mq.md {
+    font-size: clamp($text-5xl, 3.8571rem + 2.381vw, $text-6xl);
+  }
+}
+
+@mixin body {
+  font-family: $font-body;
+  font-size: clamp($text-sm, 0.8715rem + 0.2817vw, $text-lg);
+  font-weight: 400;
+  line-height: $lh-relaxed;
+}
+
+@mixin innerNav {
+  font-family: $font-secondary;
+  font-size: clamp($text-xs, 0.7557rem + 0.5089vw, $text-base);
+  font-weight: 400;
+  @include mq.lg {
+    letter-spacing: 2px;
+  }
+}
+
+@mixin infoTitle {
+  font-family: $font-secondary;
+  font-size: $text-xs;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+@mixin infoContent {
+  font-family: $color-primary;
+  font-size: $text-2xl;
+  font-weight: 400;
+}
+
 $color-primary: $color-text-primary;
 $color-secondary: $color-text-secondary;
-
-// LINE HEIGHTS
-
-$lh-none: var(--leading-none);
-$lh-tight: var(--leading-tight);
-$lh-snug: var(--leading-snug);
-$lh-normal: var(--leading-normal);
-$lh-relaxed: var(--leading-relaxed);
-$lh-loose: var(--leading-loose);
