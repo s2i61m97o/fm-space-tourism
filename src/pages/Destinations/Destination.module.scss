@@ -4,8 +4,8 @@
 
 .pageContainer {
   @include mq.lg {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
     gap: v.$sp-8;
     margin: v.$sp-2 v.$sp-40;
     align-items: flex-end;
@@ -22,7 +22,7 @@
   @include t.route;
   text-align: center;
   margin-block: v.$sp-12;
-  margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+  // margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
 
   @include mq.md {
     text-align: left;
@@ -48,7 +48,7 @@
 }
 
 .contentContainer {
-  margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+  // margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
   text-align: center;
   color: t.$color-primary;
   @include mq.sm {

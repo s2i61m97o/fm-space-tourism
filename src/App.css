@@ -1,7 +1,7 @@
 @import "./styles/tokens.css";
 @import "./styles/reset.css";
 /* @import "./foundation/base.css"; */
-/* @import "./foundation/utilities.css"; */
+@import "./styles/utils.scss";
 
 html,
 body {

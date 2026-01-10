@@ -1,4 +1,5 @@
 import {Navigate, useParams} from "react-router";
+import clsx from "clsx";
 import styles from "./Destination.module.scss";
 import DestinationNav from "./DestinationNav";
 import data from "../../data.json";
@@ -29,7 +30,7 @@ export default function Destination() {
 
   return (
     <>
-      <main className={styles.pageContainer}>
+      <main className={clsx("container", styles.pageContainer)}>
         <section className={styles.hero}>
           <h3 className={styles.pageTitle}>
             <span>01</span> pick your destination
