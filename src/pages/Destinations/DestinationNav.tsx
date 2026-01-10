@@ -6,25 +6,25 @@ export default function DestinationNav() {
     <nav className={styles.container}>
       <NavLink
         to="moon"
-        className={({isActive}) => (isActive ? "destin-active" : "")}
+        className={({isActive}) => (isActive ? styles.active : "")}
       >
         Moon
       </NavLink>
       <NavLink
         to="mars"
-        className={({isActive}) => (isActive ? "destin-active" : "")}
+        className={({isActive}) => (isActive ? styles.active : "")}
       >
         Mars
       </NavLink>
       <NavLink
         to="europa"
-        className={({isActive}) => (isActive ? "destin-active" : "")}
+        className={({isActive}) => (isActive ? styles.active : "")}
       >
         Europa
       </NavLink>
       <NavLink
         to="titan"
-        className={({isActive}) => (isActive ? "destin-active" : "")}
+        className={({isActive}) => (isActive ? styles.active : "")}
       >
         Titan
       </NavLink>

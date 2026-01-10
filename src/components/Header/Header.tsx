@@ -41,25 +41,25 @@ export default function Header() {
         <nav className={styles.header__navMenu} id="nav-menu">
           <NavLink
             to="/"
-            className={({isActive}) => (isActive ? "nav-active" : "")}
+            className={({isActive}) => (isActive ? styles.active : "")}
           >
             <span>00</span> Home
           </NavLink>
           <NavLink
             to="/destination"
-            className={({isActive}) => (isActive ? "nav-active" : "")}
+            className={({isActive}) => (isActive ? styles.active : "")}
           >
             <span>01</span> Destination
           </NavLink>
           <NavLink
             to="/crew"
-            className={({isActive}) => (isActive ? "nav-active" : "")}
+            className={({isActive}) => (isActive ? styles.active : "")}
           >
             <span>02</span> Crew
           </NavLink>
           <NavLink
             to="/technology"
-            className={({isActive}) => (isActive ? "nav-active" : "")}
+            className={({isActive}) => (isActive ? styles.active : "")}
           >
             <span>03</span> Technology
           </NavLink>

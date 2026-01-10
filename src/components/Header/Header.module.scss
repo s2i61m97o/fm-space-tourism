@@ -100,3 +100,11 @@ hr {
 span {
   font-weight: 900;
 }
+
+a.active {
+  border-right: 3px solid v.$color-white;
+  @include mq.md {
+    border-bottom: 3px solid v.$color-white;
+    border-right: none;
+  }
+}
