@@ -21,13 +21,15 @@ export default function Destination() {
       <h1 className={styles.title}>{destinationData.name}</h1>
       <p className={styles.description}>{destinationData.description}</p>
       <hr />
-      <div className={styles.infoContainer}>
-        <p>avg. distance</p>
-        <h2>{destinationData.distance}</h2>
-      </div>
-      <div className={styles.infoContainer}>
-        <p>est. travel time</p>
-        <h2>{destinationData.travel}</h2>
+      <div className={styles.flexContainer}>
+        <div className={styles.infoContainer}>
+          <p>avg. distance</p>
+          <h2>{destinationData.distance}</h2>
+        </div>
+        <div className={styles.infoContainer}>
+          <p>est. travel time</p>
+          <h2>{destinationData.travel}</h2>
+        </div>
       </div>
     </main>
   );

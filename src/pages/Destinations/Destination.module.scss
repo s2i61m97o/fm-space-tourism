@@ -7,6 +7,9 @@
   text-align: center;
   color: t.$color-primary;
   @include t.font;
+  @include mq.sm {
+    padding-inline: clamp(0rem, -27.5rem + 68.75vw, v.$sp-22);
+  }
 
   hr {
     width: 100%;
@@ -16,7 +19,9 @@
 }
 
 .title {
-  @include t.font($font-size: v.$text-4xl);
+  @include t.font(
+    $font-size: clamp(v.$text-4xl, 2.0687rem + 6.1069vw, v.$text-5xl)
+  );
   text-transform: uppercase;
 }
 
@@ -24,6 +29,16 @@
   color: t.$color-secondary;
   @include t.font(v.$font-body, v.$text-xs);
   margin-block: v.$sp-4 v.$sp-6;
+  @include mq.sm {
+    font-size: v.$text-base;
+  }
+}
+
+.flexContainer {
+  @include mq.sm {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .infoContainer {

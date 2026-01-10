@@ -15,12 +15,6 @@ type Destination = {
   travel: string;
 };
 
-type ImageStyles = {
-  height: string;
-  width: string;
-  margin: string;
-};
-
 export default function DestinationLayout() {
   const destinationData: Destination[] = data.destinations;
   const currentDestination = useParams().planet;
@@ -37,18 +31,9 @@ export default function DestinationLayout() {
     return <Navigate to="/404" />;
   }
 
-  const imageStyles: ImageStyles = {
-    width: "150px",
-    height: "150px",
-    margin: "auto",
-  };
-
   return (
     <main>
-      <PageHero
-        imgUrl={currentDestinationData?.images}
-        imgStyles={imageStyles}
-      />
+      <PageHero imgUrl={currentDestinationData?.images} />
       <DestinationNav />
       <Outlet context={currentDestinationData} />
     </main>
