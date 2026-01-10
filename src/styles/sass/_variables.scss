@@ -19,7 +19,8 @@ $font-primary: var(--font-primary);
 $font-secondary: var(--font-secondary);
 
 // TEXT SIZES
-$text-xs: var(--text-xs); // 15px
+$text-xs: var(--text-xs); // 14px
+$text-sm: var(--text-sm); // 15px
 $text-base: var(--text-base); // 16px
 $text-lg: var(--text-lg); // 18px
 $text-xl: var(--text-xl);
@@ -27,8 +28,9 @@ $text-2xl: var(--text-2xl); // 28px
 $text-3xl: var(--text-3xl);
 $text-4xl: var(--text-4xl);
 $text-5xl: var(--text-5xl); // 80px
-$text-6xl: var(--text-6xl);
-$text-7xl: var(--text-7xl); // 144px
+$text-6xl: var(--text-6xl); //96px
+$text-7xl: var(--text-7xl);
+$text-8xl: var(--text-8xl);
 
 // SPACING
 $sp-0: var(--space-0);
@@ -50,3 +52,12 @@ $sp-40: var(--space-40);
 // Z-INDEX
 $z-1: var(--z-modal);
 $z-2: var(--z-popover);
+
+// LINE HEIGHTS
+
+$lh-none: var(--leading-none);
+$lh-tight: var(--leading-tight);
+$lh-snug: var(--leading-snug);
+$lh-normal: var(--leading-normal);
+$lh-relaxed: var(--leading-relaxed);
+$lh-loose: var(--leading-loose);
