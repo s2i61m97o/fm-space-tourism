@@ -42,24 +42,28 @@ export default function Header() {
           <NavLink
             to="/"
             className={({isActive}) => (isActive ? styles.active : "")}
+            onClick={toggleMenu}
           >
             <span>00</span> Home
           </NavLink>
           <NavLink
             to="/destination"
             className={({isActive}) => (isActive ? styles.active : "")}
+            onClick={toggleMenu}
           >
             <span>01</span> Destination
           </NavLink>
           <NavLink
             to="/crew"
             className={({isActive}) => (isActive ? styles.active : "")}
+            onClick={toggleMenu}
           >
             <span>02</span> Crew
           </NavLink>
           <NavLink
             to="/technology"
             className={({isActive}) => (isActive ? styles.active : "")}
+            onClick={toggleMenu}
           >
             <span>03</span> Technology
           </NavLink>
