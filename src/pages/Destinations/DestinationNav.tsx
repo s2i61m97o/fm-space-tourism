@@ -3,7 +3,7 @@ import styles from "./DestinationNav.module.scss";
 
 export default function DestinationNav() {
   return (
-    <nav className={styles.container}>
+    <nav className={styles.container} aria-label="destinations">
       <NavLink
         to="/destination/moon"
         className={({isActive}) => (isActive ? styles.active : "")}

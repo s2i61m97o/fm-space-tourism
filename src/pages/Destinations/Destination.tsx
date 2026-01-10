@@ -23,45 +23,42 @@ export default function Destination() {
     (destination) => destination.name.toLowerCase() === currentDestination
   );
 
-  if (!currentDestinationData) {
-    throw new Error("No current destination");
-  }
-
   if (currentDestinationData === undefined) {
     return <Navigate to="/404" />;
   }
 
   return (
-    <main className={styles.pageContainer}>
-      <section className={styles.hero}>
-        <h3 className={styles.pageTitle}>
-          <span>01</span> pick your destination
-        </h3>
-        <img
-          src={currentDestinationData.images.webp}
-          alt={currentDestinationData.images.alt}
-          className={styles.heroImg}
-        />
-        ;
-      </section>
-      <section className={styles.contentContainer}>
-        <DestinationNav />
-        <h1 className={styles.title}>{currentDestinationData.name}</h1>
-        <p className={styles.description}>
-          {currentDestinationData.description}
-        </p>
-        <hr />
-        <div className={styles.flexContainer}>
-          <div className={styles.infoContainer}>
-            <p>avg. distance</p>
-            <h2>{currentDestinationData.distance}</h2>
+    <>
+      <main className={styles.pageContainer}>
+        <section className={styles.hero}>
+          <h3 className={styles.pageTitle}>
+            <span>01</span> pick your destination
+          </h3>
+          <img
+            src={currentDestinationData.images.webp}
+            alt={currentDestinationData.images.alt}
+            className={styles.heroImg}
+          />
+        </section>
+        <section className={styles.contentContainer}>
+          <DestinationNav />
+          <h1 className={styles.title}>{currentDestinationData.name}</h1>
+          <p className={styles.description}>
+            {currentDestinationData.description}
+          </p>
+          <hr />
+          <div className={styles.flexContainer}>
+            <div className={styles.infoContainer}>
+              <p>avg. distance</p>
+              <h2>{currentDestinationData.distance}</h2>
+            </div>
+            <div className={styles.infoContainer}>
+              <p>est. travel time</p>
+              <h2>{currentDestinationData.travel}</h2>
+            </div>
           </div>
-          <div className={styles.infoContainer}>
-            <p>est. travel time</p>
-            <h2>{currentDestinationData.travel}</h2>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </>
   );
 }
