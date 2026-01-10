@@ -8,6 +8,10 @@
   gap: clamp(v.$sp-6, -1.4091rem + 14.5455vw, v.$sp-8);
   margin-block: v.$sp-6;
 
+  @include mq.lg {
+    justify-content: flex-start;
+  }
+
   a {
     text-decoration: none;
     text-transform: uppercase;

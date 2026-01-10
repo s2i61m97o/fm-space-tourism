@@ -2,6 +2,20 @@
 @use "../../styles/sass/typography" as t;
 @use "../../styles/sass/breakpoints" as mq;
 
+.pageContainer {
+  @include mq.lg {
+    display: flex;
+    justify-content: center;
+    gap: v.$sp-8;
+    margin: v.$sp-12 v.$sp-40;
+    align-items: flex-end;
+  }
+}
+
+.hero {
+  flex-basis: 50%;
+}
+
 .pageTitle {
   text-transform: uppercase;
   color: t.$color-primary;
@@ -26,15 +40,23 @@
   height: clamp(9.375rem, 2.1127rem + 30.9859vw, 30rem);
   width: clamp(9.375rem, 2.1127rem + 30.9859vw, 30rem);
   margin: auto;
+  @include mq.lg {
+    margin-block-start: v.$sp-38;
+  }
 }
 
-.container {
+.contentContainer {
   margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
   text-align: center;
   color: t.$color-primary;
   @include t.font;
   @include mq.sm {
     padding-inline: clamp(0rem, -27.5rem + 68.75vw, v.$sp-22);
+  }
+  flex-basis: 50%;
+  @include mq.lg {
+    text-align: left;
+    padding-inline: 0;
   }
 
   hr {
@@ -64,6 +86,10 @@
   @include mq.sm {
     display: flex;
     justify-content: space-around;
+  }
+  @include mq.lg {
+    justify-content: flex-start;
+    gap: v.$sp-8;
   }
 }
 

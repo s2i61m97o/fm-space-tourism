@@ -34,8 +34,8 @@ export default function Destination() {
   }
 
   return (
-    <>
-      <section>
+    <main className={styles.pageContainer}>
+      <section className={styles.hero}>
         <h3 className={styles.pageTitle}>
           <span>01</span> pick your destination
         </h3>
@@ -46,8 +46,8 @@ export default function Destination() {
         />
         ;
       </section>
-      {destinationNav}
-      <main className={styles.container}>
+      <section className={styles.contentContainer}>
+        {destinationNav}
         <h1 className={styles.title}>{currentDestinationData.name}</h1>
         <p className={styles.description}>
           {currentDestinationData.description}
@@ -63,7 +63,7 @@ export default function Destination() {
             <h2>{currentDestinationData.travel}</h2>
           </div>
         </div>
-      </main>
-    </>
+      </section>
+    </main>
   );
 }
