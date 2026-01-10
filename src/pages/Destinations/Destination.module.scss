@@ -2,40 +2,8 @@
 @use "../../styles/sass/typography" as t;
 @use "../../styles/sass/breakpoints" as mq;
 
-.pageContainer {
-  @include mq.lg {
-    // display: flex;
-    // justify-content: center;
-    gap: v.$sp-8;
-    margin: v.$sp-2 v.$sp-40;
-    align-items: flex-end;
-  }
-}
-
 .hero {
   flex-basis: 50%;
-}
-
-.pageTitle {
-  text-transform: uppercase;
-  color: t.$color-primary;
-  @include t.route;
-  text-align: center;
-  margin-block: v.$sp-12;
-  // margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
-
-  @include mq.md {
-    text-align: left;
-  }
-  @include mq.lg {
-    margin-inline: 0;
-    text-wrap: nowrap;
-  }
-
-  span {
-    color: rgb(from t.$color-primary r g b / 0.5);
-    margin-right: v.$sp-6;
-  }
 }
 
 .heroImg {
