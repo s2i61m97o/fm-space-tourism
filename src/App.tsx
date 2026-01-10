@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router";
 import MasterLayout from "./components/Layouts/MasterLayout";
 import Home from "./pages/Home/Home";
 import Destination from "./pages/Destinations/Destination";
+import Crew from "./pages/Crew/Crew";
 
 function App() {
   return (
@@ -13,6 +14,10 @@ function App() {
           <Route path="/destination">
             <Route index element={<Navigate to="moon" replace />} />
             <Route path=":planet" element={<Destination />} />
+          </Route>
+          <Route path="/crew">
+            <Route index element={<Navigate to="commander" replace />} />
+            <Route path=":crew" element={<Crew />} />
           </Route>
         </Route>
       </Routes>
