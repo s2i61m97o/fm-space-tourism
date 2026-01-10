@@ -52,13 +52,19 @@ Users should be able to:
 
 ### React Router
 
-This is the first project that I am using React Router.
+This is the first project that I am using React Router. After completing the Reusability and Routing sections of the [Scrimba](https://scrimba.com/) course - [Advanced React](https://scrimba.com/advanced-react-c02h), I used this project to practise and solidify my learning.
+
+#### Routing
+
+React Router uses client-side routing - serving the entire web app, minus some API or database requests that might be needed, and allowing the React app to load any new pages as part of the app without sending a request to the server again.
+
+As part of the Scrimba course, I learnt about `<BrowserRouter>`, `<Routes>` and `<Route>` elements, as well as creating layout components for pages that share UI, as well as `<Link>` and `<NavLink>` elements, all of which I have used in this project. In completing this project I also discovered the `<Navigate>` element, which I used to redirect a route.
 
 ### TypeScript
 
-This is also the first project that I have used TypeScript in.
+This is also the first project that I have used TypeScript in. Whilst majority of the time TypeScript is able to identify the correct type of a variable/function etc. I have tried to be explicit with my types for this project to solidify what I have learnt
 
-### CSS Features:
+### CSS Features
 
 #### Using rgb(from)
 
@@ -72,8 +78,8 @@ background-color: rgb(from v.$color-white r g b / 0.05);
 
 ### Useful resources
 
-<!-- - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept. -->
+- [Learn Advanced React - Scrimba](https://scrimba.com/advanced-react-c02h) - Great course for learning about Reusability, Routing and Performance in React, with plenty of hands on (the keyboard) learning and critical thinking need. Not just a _"here's how you do it, now copy me"_ course.
+- [Learn TypeScript - Scrimba](https://scrimba.com/learn-typescript-c03c) - Another great course from Scrimba, plenty of keyboard use and thinking for yourself to take concepts and putting it into real code.
 
 ## Author
 
