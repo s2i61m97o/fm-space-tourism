@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     gap: v.$sp-8;
-    margin: v.$sp-12 v.$sp-40;
+    margin: v.$sp-2 v.$sp-40;
     align-items: flex-end;
   }
 }
@@ -19,15 +19,17 @@
 .pageTitle {
   text-transform: uppercase;
   color: t.$color-primary;
-  @include t.font(v.$font-secondary);
-  letter-spacing: 1px;
-  font-weight: 200;
+  @include t.route;
   text-align: center;
   margin-block: v.$sp-12;
   margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
 
   @include mq.md {
     text-align: left;
+  }
+  @include mq.lg {
+    margin-inline: 0;
+    text-wrap: nowrap;
   }
 
   span {
@@ -41,7 +43,7 @@
   width: clamp(9.375rem, 2.1127rem + 30.9859vw, 30rem);
   margin: auto;
   @include mq.lg {
-    margin-block-start: v.$sp-38;
+    margin-block-start: v.$sp-30;
   }
 }
 
@@ -49,7 +51,6 @@
   margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
   text-align: center;
   color: t.$color-primary;
-  @include t.font;
   @include mq.sm {
     padding-inline: clamp(0rem, -27.5rem + 68.75vw, v.$sp-22);
   }
@@ -67,19 +68,14 @@
 }
 
 .title {
-  @include t.font(
-    $font-size: clamp(v.$text-4xl, 2.0687rem + 6.1069vw, v.$text-5xl)
-  );
+  @include t.title;
   text-transform: uppercase;
 }
 
 .description {
   color: t.$color-secondary;
-  @include t.font(v.$font-body, v.$text-xs);
+  @include t.body;
   margin-block: v.$sp-4 v.$sp-6;
-  @include mq.sm {
-    font-size: v.$text-base;
-  }
 }
 
 .flexContainer {
@@ -99,10 +95,11 @@
   p {
     text-transform: uppercase;
     color: t.$color-secondary;
+    @include t.infoTitle;
   }
 
   h2 {
-    @include t.font($font-size: v.$text-2xl);
+    @include t.infoContent;
     margin-block-start: v.$sp-3;
   }
 }

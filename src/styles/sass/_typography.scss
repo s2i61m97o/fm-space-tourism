@@ -8,7 +8,7 @@
 
 @mixin route {
   font-family: $font-secondary;
-  font-size: clamp($text-base, 0.7359rem + 1.1268vw, $text-2xl);
+  font-size: clamp($text-base, 0.912rem + 0.3756vw, $text-xl);
   font-weight: 400;
   @include mq.lg {
     letter-spacing: 4px;

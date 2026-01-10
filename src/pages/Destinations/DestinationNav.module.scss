@@ -16,8 +16,7 @@
     text-decoration: none;
     text-transform: uppercase;
     color: t.$color-secondary;
-    @include t.font(v.$font-secondary, 14px);
-    letter-spacing: 2px;
+    @include t.innerNav;
     padding-bottom: v.$sp-3;
   }
 }

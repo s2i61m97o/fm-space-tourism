@@ -1,5 +1,4 @@
 import {Navigate, useParams} from "react-router";
-import {useMemo} from "react";
 import styles from "./Destination.module.scss";
 import DestinationNav from "./DestinationNav";
 import data from "../../data.json";
@@ -19,7 +18,6 @@ type Destination = {
 export default function Destination() {
   const destinationData: Destination[] = data.destinations;
   const currentDestination = useParams().planet;
-  const destinationNav = useMemo(() => <DestinationNav />, []);
 
   const currentDestinationData: Destination | undefined = destinationData.find(
     (destination) => destination.name.toLowerCase() === currentDestination
@@ -47,7 +45,7 @@ export default function Destination() {
         ;
       </section>
       <section className={styles.contentContainer}>
-        {destinationNav}
+        <DestinationNav />
         <h1 className={styles.title}>{currentDestinationData.name}</h1>
         <p className={styles.description}>
           {currentDestinationData.description}

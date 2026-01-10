@@ -45,7 +45,7 @@ body {
     @include t.font(
       $font-size: clamp(v.$text-xs, 0.8715rem + 0.2817vw, v.$text-lg)
     );
-    line-height: t.$lh-relaxed;
+    line-height: v.$lh-relaxed;
   }
 }
 
@@ -60,7 +60,7 @@ body {
     $font-size: clamp(v.$text-5xl, 1.1832rem + 16.285vw, v.$text-7xl)
   );
   margin-block: v.$sp-6;
-  line-height: t.$lh-none;
+  line-height: v.$lh-none;
 }
 
 .subtitle {
