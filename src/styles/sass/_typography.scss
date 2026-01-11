@@ -8,20 +8,46 @@
 
 @mixin route {
   font-family: $font-secondary;
-  font-size: clamp($text-base, 0.912rem + 0.3756vw, $text-xl);
+  font-size: clamp($text-base, 0.7359rem + 1.1268vw, $text-3xl);
   font-weight: 400;
   @include mq.lg {
     letter-spacing: 4px;
   }
 }
 
-@mixin title {
+@mixin homeHeading {
+  font-family: $font-heading;
+  font-size: clamp($text-7xl, 1.1832rem + 16.285vw, $text-9xl);
+  font-weight: 400;
+}
+@mixin homeSubHeading {
+  font-family: $font-secondary;
+  font-size: clamp($text-base, 0.2844rem + 3.0534vw, $text-3xl);
+  font-weight: 400;
+}
+
+@mixin destinationTitle {
   font-family: $font-primary;
-  font-size: clamp($text-4xl, 2.0687rem + 6.1069vw, $text-5xl);
+  font-size: clamp($text-6xl, 2.0687rem + 6.1069vw, $text-7xl);
+  font-weight: 400;
+  @include mq.lg {
+    font-size: clamp($text-7xl, 3.8571rem + 2.381vw, $text-8xl);
+  }
+}
+
+@mixin pageHeading {
+  font-family: $font-heading;
+  font-size: clamp($text-2xl, 0.5458rem + 4.0712vw, $text-5xl);
   font-weight: 400;
   @include mq.md {
-    font-size: clamp($text-5xl, 3.8571rem + 2.381vw, $text-6xl);
+    font-size: clamp($text-5xl, 1.3571rem + 2.381vw, $text-6xl);
   }
+}
+
+@mixin pageSubHeading {
+  font-family: $font-heading;
+  font-size: clamp($text-lg, 0.8169rem + 1.3146vw, $text-4xl);
+  font-weight: 400;
 }
 
 @mixin body {
@@ -31,7 +57,14 @@
   line-height: $lh-relaxed;
 }
 
-@mixin innerNav {
+@mixin nav {
+  font-family: $font-secondary;
+  font-size: $text-base;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+@mixin destinationNav {
   font-family: $font-secondary;
   font-size: clamp($text-xs, 0.7557rem + 0.5089vw, $text-base);
   font-weight: 400;
@@ -48,8 +81,8 @@
 }
 
 @mixin infoContent {
-  font-family: $color-primary;
-  font-size: $text-2xl;
+  font-family: $font-heading;
+  font-size: $text-3xl;
   font-weight: 400;
 }
 

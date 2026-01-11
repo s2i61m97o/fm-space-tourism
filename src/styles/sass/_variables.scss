@@ -15,23 +15,24 @@ $color-text-primary: var(--color-text-primary);
 $color-text-secondary: var(--color-text-secondary);
 
 // TYPOGRAPHY
-$font-primary: var(--font-primary);
-$font-secondary: var(--font-secondary);
-$font-body: var(--font-body);
+$font-heading: var(--font-primary); //Bellefair
+$font-secondary: var(--font-secondary); // Barlow Condensed
+$font-body: var(--font-body); // Barlow
 
 // TEXT SIZES
 $text-xs: var(--text-xs); // 14px
 $text-sm: var(--text-sm); // 15px
 $text-base: var(--text-base); // 16px
 $text-lg: var(--text-lg); // 18px
-$text-xl: var(--text-xl);
-$text-2xl: var(--text-2xl); // 28px
-$text-3xl: var(--text-3xl);
-$text-4xl: var(--text-4xl); // 56px
-$text-5xl: var(--text-5xl); // 80px
-$text-6xl: var(--text-6xl); //96px
-$text-7xl: var(--text-7xl);
-$text-8xl: var(--text-8xl);
+$text-xl: var(--text-xl); //20px
+$text-2xl: var(--text-2xl); // 24px
+$text-3xl: var(--text-3xl); // 28px
+$text-4xl: var(--text-4xl); // 32px
+$text-5xl: var(--text-5xl); // 40px
+$text-6xl: var(--text-6xl); // 56px
+$text-7xl: var(--text-7xl); // 80px
+$text-8xl: var(--text-8xl); // 96px
+$text-9xl: var(--text-9xl); // 144px
 
 // SPACING
 $sp-0: var(--space-0);
