@@ -1,4 +1,5 @@
 import {useParams, Navigate} from "react-router";
+import CrewNav from "./CrewNav";
 import clsx from "clsx";
 import styles from "./Crew.module.scss";
 import data from "../../data.json";
@@ -34,7 +35,7 @@ export default function Crew() {
         <h2>{crewMember.role}</h2>
         <h1>{crewMember.name}</h1>
         <p>{crewMember.bio}</p>
-        {/* {nav here} */}
+        <CrewNav />
       </section>
       <img src={crewMember.images.webp} alt={crewMember.images.alt} />
     </main>
