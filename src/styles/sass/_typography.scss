@@ -1,7 +1,7 @@
 @use "./variables" as *;
 @use "./breakpoints" as mq;
 
-@mixin font($font-family: $font-primary, $font-size: $text-base) {
+@mixin font($font-family: $font-heading, $font-size: $text-base) {
   font-family: $font-family;
   font-size: $font-size;
 }
@@ -24,10 +24,12 @@
   font-family: $font-secondary;
   font-size: clamp($text-base, 0.2844rem + 3.0534vw, $text-3xl);
   font-weight: 400;
+  letter-spacing: 2px;
+  line-height: $lh-normal;
 }
 
 @mixin destinationTitle {
-  font-family: $font-primary;
+  font-family: $font-heading;
   font-size: clamp($text-6xl, 2.0687rem + 6.1069vw, $text-7xl);
   font-weight: 400;
   @include mq.lg {
@@ -60,8 +62,8 @@
 @mixin nav {
   font-family: $font-secondary;
   font-size: $text-base;
-  font-weight: 400;
-  letter-spacing: 2px;
+  font-weight: 200;
+  letter-spacing: 1px;
 }
 
 @mixin destinationNav {

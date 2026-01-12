@@ -31,7 +31,7 @@ export default function Destination() {
     <>
       <main className={styles.pageContainer}>
         <section className={styles.hero}>
-          <h3 className={styles.pageTitle}>
+          <h3 className={styles.route}>
             <span>01</span> pick your destination
           </h3>
           <img

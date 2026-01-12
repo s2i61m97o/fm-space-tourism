@@ -16,7 +16,7 @@
   flex-basis: 50%;
 }
 
-.pageTitle {
+.route {
   text-transform: uppercase;
   color: t.$color-primary;
   @include t.route;
@@ -51,10 +51,10 @@
   margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
   text-align: center;
   color: t.$color-primary;
+  flex-basis: 50%;
   @include mq.sm {
     padding-inline: clamp(0rem, -27.5rem + 68.75vw, v.$sp-22);
   }
-  flex-basis: 50%;
   @include mq.lg {
     text-align: left;
     padding-inline: 0;
@@ -68,7 +68,7 @@
 }
 
 .title {
-  @include t.title;
+  @include t.destinationTitle;
   text-transform: uppercase;
 }
 

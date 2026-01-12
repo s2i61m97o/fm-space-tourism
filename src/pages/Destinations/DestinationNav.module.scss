@@ -16,7 +16,7 @@
     text-decoration: none;
     text-transform: uppercase;
     color: t.$color-secondary;
-    @include t.innerNav;
+    @include t.destinationNav;
     padding-bottom: v.$sp-3;
   }
 }

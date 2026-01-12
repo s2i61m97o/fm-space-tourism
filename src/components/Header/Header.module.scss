@@ -37,8 +37,8 @@ hr {
 
 .header__navbar {
   background-color: rgb(from v.$color-white r g b / 0.05);
-  padding-inline: clamp(v.$sp-10, -6.0714rem + 17.8571vw, v.$sp-40)
-    clamp(v.$sp-10, 0.7857rem + 3.5714vw, v.$sp-16);
+  padding-inline: clamp(v.$sp-8, -6.0714rem + 17.8571vw, v.$sp-40)
+    clamp(v.$sp-8, 0.7857rem + 3.5714vw, v.$sp-16);
 }
 
 .header__offcanvas {
@@ -83,8 +83,9 @@ hr {
   & a {
     text-decoration: none;
     color: t.$color-primary;
-    @include t.font(v.$font-secondary);
     text-transform: uppercase;
+    text-wrap: nowrap;
+    @include t.nav;
     @include mq.md {
       padding-block: v.$sp-10;
     }

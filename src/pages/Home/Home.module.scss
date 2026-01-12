@@ -42,10 +42,7 @@ body {
 
   p {
     color: t.$color-secondary;
-    @include t.font(
-      $font-size: clamp(v.$text-xs, 0.8715rem + 0.2817vw, v.$text-lg)
-    );
-    line-height: v.$lh-relaxed;
+    @include t.body;
   }
 }
 
@@ -56,17 +53,13 @@ body {
 }
 
 .title {
-  @include t.font(
-    $font-size: clamp(v.$text-5xl, 1.1832rem + 16.285vw, v.$text-7xl)
-  );
+  @include t.homeHeading;
   margin-block: v.$sp-6;
   line-height: v.$lh-none;
 }
 
 .subtitle {
-  @include t.font(
-    $font-size: clamp(v.$text-base, 0.2844rem + 3.0534vw, v.$text-2xl)
-  );
+  @include t.homeSubHeading;
   color: t.$color-secondary;
 }
 
