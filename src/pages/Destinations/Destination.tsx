@@ -32,7 +32,7 @@ export default function Destination() {
     <>
       <main className={clsx("container")}>
         <section className={styles.hero}>
-          <h3 className="route">
+          <h3 className={styles.route}>
             <span>01</span> pick your destination
           </h3>
           <img

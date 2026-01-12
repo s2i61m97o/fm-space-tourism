@@ -6,6 +6,28 @@
   flex-basis: 50%;
 }
 
+.route {
+  text-transform: uppercase;
+  color: t.$color-primary;
+  @include t.route;
+  text-align: center;
+  margin-block: v.$sp-12;
+  margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+
+  @include mq.md {
+    text-align: left;
+  }
+  @include mq.lg {
+    margin-inline: 0;
+    text-wrap: nowrap;
+  }
+
+  span {
+    color: rgb(from t.$color-primary r g b / 0.5);
+    margin-right: v.$sp-6;
+  }
+}
+
 .heroImg {
   height: clamp(9.375rem, 2.1127rem + 30.9859vw, 30rem);
   width: clamp(9.375rem, 2.1127rem + 30.9859vw, 30rem);
@@ -19,10 +41,10 @@
   // margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
   text-align: center;
   color: t.$color-primary;
+  flex-basis: 50%;
   @include mq.sm {
     padding-inline: clamp(0rem, -27.5rem + 68.75vw, v.$sp-22);
   }
-  flex-basis: 50%;
   @include mq.lg {
     text-align: left;
     padding-inline: 0;
@@ -36,7 +58,7 @@
 }
 
 .title {
-  @include t.title;
+  @include t.destinationTitle;
   text-transform: uppercase;
 }
 
