@@ -4,6 +4,7 @@ import MasterLayout from "./components/Layouts/MasterLayout";
 import Home from "./pages/Home/Home";
 import Destination from "./pages/Destinations/Destination";
 import Crew from "./pages/Crew/Crew";
+import Technology from "./pages/Technology/Technology";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
           <Route path="/crew">
             <Route index element={<Navigate to="commander" replace />} />
             <Route path=":crew" element={<Crew />} />
+          </Route>
+          <Route path="/technology">
+            <Route index element={<Navigate to="launch-vehicle" replace />} />
+            <Route path=":tech" element={<Technology />} />
           </Route>
         </Route>
       </Routes>
