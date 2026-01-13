@@ -27,17 +27,25 @@ export default function Crew() {
   }
 
   return (
-    <main className={clsx("container")}>
-      <section>
-        <h3 className="route">
-          <span>02</span>meet your crew
-        </h3>
-        <h2>{crewMember.role}</h2>
-        <h1>{crewMember.name}</h1>
-        <p>{crewMember.bio}</p>
-        <CrewNav />
-      </section>
-      <img src={crewMember.images.webp} alt={crewMember.images.alt} />
-    </main>
+    <>
+      <h3 className={clsx("route", styles.route)}>
+        <span>02</span>meet your crew
+      </h3>
+      <main className="container">
+        <section className={styles.content}>
+          <section className={styles.memberInfo}>
+            <h2 className={styles.role}>{crewMember.role}</h2>
+            <h1 className={styles.name}>{crewMember.name}</h1>
+            <p className={styles.bio}>{crewMember.bio}</p>
+          </section>
+          <CrewNav />
+        </section>
+        <img
+          src={crewMember.images.webp}
+          alt={crewMember.images.alt}
+          className={styles.crewImg}
+        />
+      </main>
+    </>
   );
 }

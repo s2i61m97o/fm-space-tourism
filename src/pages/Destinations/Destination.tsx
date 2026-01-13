@@ -1,5 +1,4 @@
 import {Navigate, useParams} from "react-router";
-import clsx from "clsx";
 import styles from "./Destination.module.scss";
 import DestinationNav from "./DestinationNav";
 import data from "../../data.json";
@@ -30,11 +29,11 @@ export default function Destination() {
 
   return (
     <>
-      <main className={clsx("container")}>
+      <h3 className="route">
+        <span>01</span> pick your destination
+      </h3>
+      <main className="container">
         <section className={styles.hero}>
-          <h3 className={styles.route}>
-            <span>01</span> pick your destination
-          </h3>
           <img
             src={currentDestinationData.images.webp}
             alt={currentDestinationData.images.alt}

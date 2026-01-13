@@ -19,13 +19,14 @@
   @include t.route;
   text-align: center;
   margin-block: v.$sp-12;
+  margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
 
   @include mq.md {
     text-align: left;
+    margin-inline: clamp(v.$sp-10, -6.0714rem + 17.8571vw, v.$sp-40);
   }
   @include mq.lg {
-    margin-inline: 0;
-    text-wrap: nowrap;
+    margin-block-end: 0;
   }
 
   span {

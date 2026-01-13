@@ -1,0 +1,45 @@
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.memberInfo {
+  text-align: center;
+  margin-inline: clamp(0rem, -5.2481rem + 22.3919vw, v.$sp-22);
+  @include mq.md {
+    margin-inline: clamp(v.$sp-22, -14rem + 40.625vw, v.$sp-48);
+  }
+  @include mq.lg {
+    text-align: left;
+    margin-inline: 0;
+    margin-block: v.$sp-40;
+  }
+}
+
+.role {
+  @include t.pageSubHeading;
+  color: rgb(from t.$color-primary r g b / 0.5);
+  text-transform: uppercase;
+  margin-block: v.$sp-2;
+}
+
+.name {
+  @include t.pageHeading;
+  color: t.$color-primary;
+  text-transform: uppercase;
+}
+
+.bio {
+  @include t.body;
+  color: t.$color-secondary;
+  margin-block: v.$sp-6;
+}
+
+.crewImg {
+  width: clamp(16.875rem, 6.4385rem + 44.5293vw, 27.8125rem);
+  margin: v.$sp-8 auto 0;
+
+  @include mq.lg {
+    width: auto;
+    margin: 0;
+  }
+}

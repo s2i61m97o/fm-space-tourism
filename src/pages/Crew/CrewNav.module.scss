@@ -6,6 +6,11 @@
   display: flex;
   justify-content: center;
   gap: v.$sp-4;
+  margin-block: v.$sp-8;
+
+  @include mq.lg {
+    justify-content: flex-start;
+  }
 
   a {
     width: clamp(0.625rem, 0.2679rem + 0.744vw, 0.9375rem);

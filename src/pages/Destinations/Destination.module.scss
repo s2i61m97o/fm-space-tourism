@@ -6,27 +6,27 @@
   flex-basis: 50%;
 }
 
-.route {
-  text-transform: uppercase;
-  color: t.$color-primary;
-  @include t.route;
-  text-align: center;
-  margin-block: v.$sp-12;
-  margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+// .route {
+// text-transform: uppercase;
+// color: t.$color-primary;
+// @include t.route;
+// text-align: center;
+// margin-block: v.$sp-12;
+// margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
 
-  @include mq.md {
-    text-align: left;
-  }
-  @include mq.lg {
-    margin-inline: 0;
-    text-wrap: nowrap;
-  }
+//   @include mq.md {
+//     text-align: left;
+//   }
+//   @include mq.lg {
+//     margin-inline: 0;
+//     text-wrap: nowrap;
+//   }
 
-  span {
-    color: rgb(from t.$color-primary r g b / 0.5);
-    margin-right: v.$sp-6;
-  }
-}
+//   span {
+//     color: rgb(from t.$color-primary r g b / 0.5);
+//     margin-right: v.$sp-6;
+//   }
+// }
 
 .heroImg {
   height: clamp(9.375rem, 2.1127rem + 30.9859vw, 30rem);
