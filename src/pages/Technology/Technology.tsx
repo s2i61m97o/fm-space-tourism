@@ -3,6 +3,7 @@ import {useBackgroundImage} from "../../hooks/background";
 import clsx from "clsx";
 import data from "../../data.json";
 import useScreenSize from "../../hooks/useScreenSize";
+import styles from "./Technology.module.scss";
 
 type Tech = {
   name: string;
@@ -40,14 +41,24 @@ export default function Technology() {
         )}
       >
         <img
-          src={screenSize < 1023 ? tech.images.landscape : tech.images.portrait}
+          src={
+            screenSize < 1023 && screenSize > 640
+              ? tech.images.landscape
+              : tech.images.portrait
+          }
           alt={tech.images.alt}
+          className={styles.img}
         />
         {/* Nav Here */}
-        <section className={clsx(screenSize < 1023 ? "container" : undefined)}>
-          <h2>the terminology...</h2>
-          <h1>{tech.name}</h1>
-          <p>{tech.description}</p>
+        <section
+          className={clsx(
+            screenSize < 1023 ? "container" : undefined,
+            styles.content
+          )}
+        >
+          <h2 className={styles.heading}>the terminology...</h2>
+          <h1 className={styles.name}>{tech.name}</h1>
+          <p className={styles.description}>{tech.description}</p>
         </section>
       </main>
     </>

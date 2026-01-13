@@ -1,0 +1,48 @@
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.container {
+  @include mq.lg {
+    flex-direction: row-reverse;
+    margin-inline-end: 0;
+  }
+}
+
+.content {
+  text-align: center;
+  flex-basis: 50%;
+  @include mq.lg {
+    text-align: left;
+  }
+}
+
+.heading {
+  @include t.pageSubHeading;
+  color: t.$color-secondary;
+  text-transform: uppercase;
+}
+
+.name {
+  @include t.pageHeading;
+  color: t.$color-primary;
+  text-transform: uppercase;
+  margin-block: v.$sp-4;
+}
+
+.description {
+  @include t.body;
+  color: t.$color-secondary;
+}
+
+.img {
+  width: 100%;
+  max-height: 430px;
+  flex-basis: 50%;
+  @include mq.sm {
+    max-height: none;
+  }
+  @include mq.lg {
+    width: auto;
+  }
+}
