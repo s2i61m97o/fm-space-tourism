@@ -1,7 +1,9 @@
 import {Link} from "react-router";
 import styles from "./Home.module.scss";
+import {useBackgroundImage} from "../../hooks/background";
 
 export default function Home() {
+  useBackgroundImage();
   return (
     <main className={styles.container}>
       <section className={styles.hero}>

@@ -1,6 +1,6 @@
-@use "./sass/variables" as v;
-@use "./sass/typography" as t;
-@use "./sass/breakpoints" as mq;
+@use "./variables" as v;
+@use "./typography" as t;
+@use "./breakpoints" as mq;
 
 .container {
   margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);

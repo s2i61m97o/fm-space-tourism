@@ -2,6 +2,7 @@ import {Navigate, useParams} from "react-router";
 import styles from "./Destination.module.scss";
 import DestinationNav from "./DestinationNav";
 import data from "../../data.json";
+import {useBackgroundImage} from "../../hooks/background";
 
 type Destination = {
   name: string;
@@ -22,6 +23,8 @@ export default function Destination() {
   const currentDestinationData: Destination | undefined = destinationData.find(
     (destination) => destination.name.toLowerCase() === currentDestination
   );
+
+  useBackgroundImage();
 
   if (currentDestinationData === undefined) {
     return <Navigate to="/404" />;

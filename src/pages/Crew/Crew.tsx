@@ -3,6 +3,7 @@ import CrewNav from "./CrewNav";
 import clsx from "clsx";
 import styles from "./Crew.module.scss";
 import data from "../../data.json";
+import {useBackgroundImage} from "../../hooks/background";
 
 type Crew = {
   name: string;
@@ -21,6 +22,8 @@ export default function Crew() {
   const crewMember: Crew | undefined = crewData.find(
     (crew) => crew.role.toLowerCase().replace(" ", "-") === currentCrewMember
   );
+
+  useBackgroundImage();
 
   if (crewMember === undefined) {
     return <Navigate to="/404" />;
