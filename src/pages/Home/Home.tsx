@@ -1,6 +1,6 @@
-import {Link} from "react-router";
 import styles from "./Home.module.scss";
 import {useBackgroundImage} from "../../hooks/useBackgroundImage";
+import ExploreBtn from "../../components/ExploreBtn/ExploreBtn";
 
 export default function Home() {
   useBackgroundImage();
@@ -17,9 +17,7 @@ export default function Home() {
         </p>
       </section>
       <div className={styles.explore__container}>
-        <Link to="/destination" className={styles.explore}>
-          <div className={styles.explore__bkgd}>Explore</div>
-        </Link>
+        <ExploreBtn />
       </div>
     </main>
   );

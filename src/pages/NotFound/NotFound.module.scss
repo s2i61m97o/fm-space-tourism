@@ -25,3 +25,9 @@
   color: t.$color-secondary;
   text-transform: uppercase;
 }
+
+.explore__container {
+  margin: v.$sp-20 auto;
+  display: flex;
+  justify-content: center;
+}

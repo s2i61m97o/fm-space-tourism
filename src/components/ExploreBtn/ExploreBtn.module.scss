@@ -1,0 +1,26 @@
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.explore {
+  text-decoration: none;
+  color: v.$color-blue-950;
+  text-transform: uppercase;
+  @include t.font(
+    $font-size: clamp(v.$text-lg, 0.2901rem + 3.5623vw, v.$text-3xl)
+  );
+}
+
+.explore__bkgd {
+  background-color: v.$color-white;
+  height: clamp(9rem, 6.1831rem + 12.0188vw, 17rem);
+  width: clamp(9rem, 6.1831rem + 12.0188vw, 17rem);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    box-shadow: 0 0 0 v.$sp-20 rgb(from v.$color-white r g b / 0.15);
+  }
+}
