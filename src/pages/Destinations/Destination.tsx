@@ -2,7 +2,7 @@ import {Navigate, useParams} from "react-router";
 import styles from "./Destination.module.scss";
 import DestinationNav from "./DestinationNav";
 import data from "../../data.json";
-import {useBackgroundImage} from "../../hooks/background";
+import {useBackgroundImage} from "../../hooks/useBackgroundImage";
 
 type Destination = {
   name: string;

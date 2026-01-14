@@ -3,7 +3,7 @@ import CrewNav from "./CrewNav";
 import clsx from "clsx";
 import styles from "./Crew.module.scss";
 import data from "../../data.json";
-import {useBackgroundImage} from "../../hooks/background";
+import {useBackgroundImage} from "../../hooks/useBackgroundImage";
 
 type Crew = {
   name: string;

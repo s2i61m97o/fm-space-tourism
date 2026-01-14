@@ -1,5 +1,5 @@
 import {useParams, Navigate} from "react-router";
-import {useBackgroundImage} from "../../hooks/background";
+import {useBackgroundImage} from "../../hooks/useBackgroundImage";
 import clsx from "clsx";
 import data from "../../data.json";
 import useScreenSize from "../../hooks/useScreenSize";
