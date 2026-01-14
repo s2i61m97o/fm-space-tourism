@@ -4,6 +4,7 @@ import clsx from "clsx";
 import data from "../../data.json";
 import useScreenSize from "../../hooks/useScreenSize";
 import styles from "./Technology.module.scss";
+import TechNav from "./TechNav";
 
 type Tech = {
   name: string;
@@ -49,7 +50,7 @@ export default function Technology() {
           alt={tech.images.alt}
           className={styles.img}
         />
-        {/* Nav Here */}
+        {screenSize < 1024 ? <TechNav /> : undefined}
         <section
           className={clsx(
             screenSize < 1023 ? "container" : undefined,
@@ -60,6 +61,7 @@ export default function Technology() {
           <h1 className={styles.name}>{tech.name}</h1>
           <p className={styles.description}>{tech.description}</p>
         </section>
+        {screenSize < 1024 ? undefined : <TechNav />}
       </main>
     </>
   );

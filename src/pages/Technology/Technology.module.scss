@@ -6,6 +6,8 @@
   @include mq.lg {
     flex-direction: row-reverse;
     margin-inline-end: 0;
+    align-items: center;
+    gap: v.$sp-8;
   }
 }
 
