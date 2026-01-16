@@ -15,14 +15,12 @@ function useBackgroundImage() {
     backgroundClassname = "home";
   } else {
     const currentPathParent = currentPath.split("/")[1];
-    console.log(currentPathParent);
     for (const [path, classname] of Object.entries(backgroundClasses)) {
       if (path === currentPathParent) {
         backgroundClassname = classname;
       }
     }
   }
-  console.log(backgroundClassname);
 
   useEffect(() => {
     document.body.classList.add(backgroundClassname);
