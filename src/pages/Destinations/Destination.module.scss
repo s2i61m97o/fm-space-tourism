@@ -6,7 +6,7 @@
   flex-basis: 50%;
 }
 
-.heroImg {
+.hero__image {
   height: clamp(9.375rem, 2.1127rem + 30.9859vw, 30rem);
   width: clamp(9.375rem, 2.1127rem + 30.9859vw, 30rem);
   margin: auto;
@@ -34,18 +34,18 @@
   }
 }
 
-.title {
+.contentContainer__title {
   @include t.destinationTitle;
   text-transform: uppercase;
 }
 
-.description {
+.contentContainer__description {
   color: t.$color-secondary;
   @include t.body;
   margin-block: v.$sp-4 v.$sp-6;
 }
 
-.flexContainer {
+.contentContainer__flexContainer {
   @include mq.sm {
     display: flex;
     justify-content: space-around;
@@ -56,7 +56,7 @@
   }
 }
 
-.infoContainer {
+.contentContainer__infoContainer {
   margin-block: v.$sp-6;
 
   p {

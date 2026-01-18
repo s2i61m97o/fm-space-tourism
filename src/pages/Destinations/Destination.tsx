@@ -40,22 +40,24 @@ export default function Destination() {
           <img
             src={`${import.meta.env.BASE_URL}${currentDestinationData.images.webp}`}
             alt={currentDestinationData.images.alt}
-            className={styles.heroImg}
+            className={styles.hero__image}
           />
         </section>
         <section className={styles.contentContainer}>
           <DestinationNav />
-          <h1 className={styles.title}>{currentDestinationData.name}</h1>
-          <p className={styles.description}>
+          <h1 className={styles.contentContainer__title}>
+            {currentDestinationData.name}
+          </h1>
+          <p className={styles.contentContainer__description}>
             {currentDestinationData.description}
           </p>
           <hr />
-          <div className={styles.flexContainer}>
-            <div className={styles.infoContainer}>
+          <div className={styles.contentContainer__flexContainer}>
+            <div className={styles.contentContainer__infoContainer}>
               <p>avg. distance</p>
               <h2>{currentDestinationData.distance}</h2>
             </div>
-            <div className={styles.infoContainer}>
+            <div className={styles.contentContainer__infoContainer}>
               <p>est. travel time</p>
               <h2>{currentDestinationData.travel}</h2>
             </div>
