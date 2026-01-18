@@ -37,16 +37,16 @@ export default function Crew() {
       <main className="container">
         <section className={styles.content}>
           <section className={styles.memberInfo}>
-            <h2 className={styles.role}>{crewMember.role}</h2>
-            <h1 className={styles.name}>{crewMember.name}</h1>
-            <p className={styles.bio}>{crewMember.bio}</p>
+            <h2 className={styles.memberInfo__role}>{crewMember.role}</h2>
+            <h1 className={styles.memberInfo__name}>{crewMember.name}</h1>
+            <p className={styles.memberInfo__bio}>{crewMember.bio}</p>
           </section>
           <CrewNav />
         </section>
         <img
           src={`${import.meta.env.BASE_URL}${crewMember.images.webp}`}
           alt={crewMember.images.alt}
-          className={styles.crewImg}
+          className={styles.imemberInfo__mg}
         />
       </main>
     </>
