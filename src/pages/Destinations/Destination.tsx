@@ -38,7 +38,7 @@ export default function Destination() {
       <main className="container">
         <section className={styles.hero}>
           <img
-            src={currentDestinationData.images.webp}
+            src={`${import.meta.env.BASE_URL}${currentDestinationData.images.webp}`}
             alt={currentDestinationData.images.alt}
             className={styles.heroImg}
           />

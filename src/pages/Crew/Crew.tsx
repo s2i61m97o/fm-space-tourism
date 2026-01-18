@@ -20,7 +20,7 @@ export default function Crew() {
   const crewData: Crew[] = data.crew;
   const currentCrewMember: string | undefined = useParams().crew;
   const crewMember: Crew | undefined = crewData.find(
-    (crew) => crew.role.toLowerCase().replace(" ", "-") === currentCrewMember
+    (crew) => crew.role.toLowerCase().replace(" ", "-") === currentCrewMember,
   );
 
   useBackgroundImage();
@@ -44,7 +44,7 @@ export default function Crew() {
           <CrewNav />
         </section>
         <img
-          src={crewMember.images.webp}
+          src={`${import.meta.env.BASE_URL}${crewMember.images.webp}`}
           alt={crewMember.images.alt}
           className={styles.crewImg}
         />

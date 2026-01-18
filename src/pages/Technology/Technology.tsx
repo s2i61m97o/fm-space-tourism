@@ -23,7 +23,7 @@ export default function Technology() {
   const techData: Tech[] = data.technology;
   const currentTech: string | undefined = useParams().tech;
   const tech: Tech | undefined = techData.find(
-    (tech) => tech.name.toLowerCase().replace(" ", "-") === currentTech
+    (tech) => tech.name.toLowerCase().replace(" ", "-") === currentTech,
   );
 
   if (tech === undefined) {
@@ -38,14 +38,14 @@ export default function Technology() {
       <main
         className={clsx(
           screenSize > 1023 ? "container" : undefined,
-          styles.container
+          styles.container,
         )}
       >
         <img
           src={
             screenSize < 1023 && screenSize > 640
-              ? tech.images.landscape
-              : tech.images.portrait
+              ? `${import.meta.env.BASE_URL}${tech.images.landscape}`
+              : `${import.meta.env.BASE_URL}${tech.images.portrait}`
           }
           alt={tech.images.alt}
           className={styles.img}
@@ -54,7 +54,7 @@ export default function Technology() {
         <section
           className={clsx(
             screenSize < 1023 ? "container" : undefined,
-            styles.content
+            styles.content,
           )}
         >
           <h2 className={styles.heading}>the terminology...</h2>
