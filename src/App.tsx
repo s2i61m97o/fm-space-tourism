@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <BrowserRouter basename={import.meta.env.PROD ? "/fm-space-tourism" : "/"}>
       <Routes>
         <Route element={<MasterLayout />}>
           <Route path="/" element={<Home />} />
