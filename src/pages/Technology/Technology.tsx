@@ -48,7 +48,7 @@ export default function Technology() {
               : `${import.meta.env.BASE_URL}${tech.images.portrait}`
           }
           alt={tech.images.alt}
-          className={styles.img}
+          className={styles.content__img}
         />
         {screenSize < 1024 ? <TechNav /> : undefined}
         <section
@@ -57,9 +57,9 @@ export default function Technology() {
             styles.content,
           )}
         >
-          <h2 className={styles.heading}>the terminology...</h2>
-          <h1 className={styles.name}>{tech.name}</h1>
-          <p className={styles.description}>{tech.description}</p>
+          <h2 className={styles.content__heading}>the terminology...</h2>
+          <h1 className={styles.content__name}>{tech.name}</h1>
+          <p className={styles.content__description}>{tech.description}</p>
         </section>
         {screenSize < 1024 ? undefined : <TechNav />}
       </main>
