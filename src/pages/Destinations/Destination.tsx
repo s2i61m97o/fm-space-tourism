@@ -21,7 +21,7 @@ export default function Destination() {
   const currentDestination = useParams().planet;
 
   const currentDestinationData: Destination | undefined = destinationData.find(
-    (destination) => destination.name.toLowerCase() === currentDestination
+    (destination) => destination.name.toLowerCase() === currentDestination,
   );
 
   useBackgroundImage();
