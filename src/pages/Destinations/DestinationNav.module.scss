@@ -18,10 +18,14 @@
     color: t.$color-secondary;
     @include t.destinationNav;
     padding-bottom: v.$sp-3;
+
+    &:hover {
+      border-bottom: 3px solid v.$color-blue-300;
+    }
   }
 }
 
 a.active {
-  border-bottom: 3px solid white;
-  color: white;
+  border-bottom: 3px solid v.$color-white;
+  color: v.$color-white;
 }
