@@ -32,19 +32,19 @@
   }
 }
 
-.title,
-.subtitle {
+.hero__title,
+.hero__subtitle {
   text-transform: uppercase;
   font-weight: 400;
 }
 
-.title {
+.hero__title {
   @include t.homeHeading;
   margin-block: v.$sp-6;
   line-height: v.$lh-none;
 }
 
-.subtitle {
+.hero__subtitle {
   @include t.homeSubHeading;
   color: t.$color-secondary;
 }
