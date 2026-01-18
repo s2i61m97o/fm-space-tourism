@@ -1,60 +1,60 @@
 @use "./breakpoints" as *;
 
 .home {
-  background-image: url("/images/home/background-home-mobile.jpg");
+  background-image: url("images/home/background-home-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 
   @include md {
-    background-image: url("/images/home/background-home-tablet.jpg");
+    background-image: url("images/home/background-home-tablet.jpg");
   }
 
   @include lg {
-    background-image: url("/images/home/background-home-degitsktop.jpg");
+    background-image: url("images/home/background-home-desktop.jpg");
   }
 }
 
 .destination {
-  background-image: url("/images/destination/background-destination-mobile.jpg");
+  background-image: url("images/destination/background-destination-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
   @include md {
-    background-image: url("/images/destination/background-destination-tablet.jpg");
+    background-image: url("images/destination/background-destination-tablet.jpg");
   }
 
   @include lg {
-    background-image: url("/images/destination/background-destination-desktop.jpg");
+    background-image: url("images/destination/background-destination-desktop.jpg");
   }
 }
 
 .crew {
-  background-image: url("/images/crew/background-crew-mobile.jpg");
+  background-image: url("images/crew/background-crew-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
   @include md {
-    background-image: url("/images/crew/background-crew-tablet.jpg");
+    background-image: url("images/crew/background-crew-tablet.jpg");
   }
 
   @include lg {
-    background-image: url("/images/crew/background-crew-desktop.jpg");
+    background-image: url("images/crew/background-crew-desktop.jpg");
   }
 }
 
 .technology {
-  background-image: url("/images/technology/background-technology-mobile.jpg");
+  background-image: url("images/technology/background-technology-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 
   @include md {
-    background-image: url("/images/technology/background-technology-tablet.jpg");
+    background-image: url("images/technology/background-technology-tablet.jpg");
   }
 
   @include lg {
-    background-image: url("/images/technology/background-technology-desktop.jpg");
+    background-image: url("images/technology/background-technology-desktop.jpg");
   }
 }

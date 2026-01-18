@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="fm-space-tourism">
       <Routes>
         <Route element={<MasterLayout />}>
           <Route path="/" element={<Home />} />
