@@ -83,6 +83,7 @@ This came in useful in several areas of this project, and will be something I us
 
 - [Learn Advanced React - Scrimba](https://scrimba.com/advanced-react-c02h) - Great course for learning about Reusability, Routing and Performance in React, with plenty of hands on (the keyboard) learning and critical thinking need. Not just a _"here's how you do it, now copy me"_ course.
 - [Learn TypeScript - Scrimba](https://scrimba.com/learn-typescript-c03c) - Another great course from Scrimba, plenty of keyboard use and thinking for yourself to take concepts and putting it into real code.
+- [Swiped Events NPM Package](https://www.npmjs.com/package/swiped-events) - allows for the addition of "swiped" events to event listeners. The npm package I used to allow users to swipe navigate through the content of this projects pages
 
 ## Author
 
