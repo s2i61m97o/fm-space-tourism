@@ -4,6 +4,7 @@ import clsx from "clsx";
 import styles from "./Crew.module.scss";
 import data from "../../data.json";
 import {useBackgroundImage} from "../../hooks/useBackgroundImage";
+import useSwipeNavigation from "../../hooks/useSwipeNavigation";
 
 type Crew = {
   name: string;
@@ -25,9 +26,14 @@ export default function Crew() {
 
   useBackgroundImage();
 
-  if (crewMember === undefined) {
-    return <Navigate to="/404" />;
-  }
+  useSwipeNavigation("crew", currentCrewMember, [
+    "commander",
+    "mission-specialist",
+    "pilot",
+    "flight-engineer",
+  ]);
+
+  if (!crewMember) return <Navigate to="/404" />;
 
   return (
     <>
