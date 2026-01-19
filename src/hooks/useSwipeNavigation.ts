@@ -29,6 +29,9 @@ export default function useSwipeNavigation(
   };
 
   useEffect(() => {
-    window.addEventListener("swiped", (e) => handleSwipe(e.detail.dir));
+    const handleSwipeEvent = (e: CustomEvent<SwipedEventDetail>) =>
+      handleSwipe(e.detail.dir);
+    window.addEventListener("swiped", handleSwipeEvent);
+    return () => window.removeEventListener("swiped", handleSwipeEvent);
   });
 }

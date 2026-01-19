@@ -23,15 +23,12 @@ export default function Crew() {
   const crewMember: Crew | undefined = crewData.find(
     (crew) => crew.role.toLowerCase().replace(" ", "-") === currentCrewMember,
   );
+  const crewPaths: string[] = crewData.map((member) =>
+    member.role.toLowerCase().replace(" ", "-"),
+  );
 
   useBackgroundImage();
-
-  useSwipeNavigation("crew", currentCrewMember, [
-    "commander",
-    "mission-specialist",
-    "pilot",
-    "flight-engineer",
-  ]);
+  useSwipeNavigation("crew", currentCrewMember, crewPaths);
 
   if (!crewMember) return <Navigate to="/404" />;
 
