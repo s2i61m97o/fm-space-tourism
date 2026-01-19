@@ -18,7 +18,7 @@ type Destination = {
 
 export default function Destination() {
   const destinationData: Destination[] = data.destinations;
-  const currentDestination = useParams().planet;
+  const currentDestination: string | undefined = useParams().planet;
 
   const currentDestinationData: Destination | undefined = destinationData.find(
     (destination) => destination.name.toLowerCase() === currentDestination,

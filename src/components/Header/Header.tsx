@@ -8,18 +8,21 @@ import useScreenSize from "../../hooks/useScreenSize";
 import styles from "./Header.module.scss";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const screenSize = useScreenSize();
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const screenSize: number = useScreenSize();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const navStyles = clsx(
+  const navStyles: string = clsx(
     styles.header__nav,
     screenSize > 767
       ? styles.header__navbar
-      : clsx(styles.header__offcanvas, menuOpen && styles.header__offcanvasOpen)
+      : clsx(
+          styles.header__offcanvas,
+          menuOpen && styles.header__offcanvasOpen,
+        ),
   );
 
   return (
