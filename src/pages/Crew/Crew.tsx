@@ -49,7 +49,7 @@ export default function Crew() {
         <img
           src={`${import.meta.env.BASE_URL}${crewMember.images.webp}`}
           alt={crewMember.images.alt}
-          className={styles.imemberInfo__mg}
+          className={styles.memberInfo__img}
         />
       </main>
     </>

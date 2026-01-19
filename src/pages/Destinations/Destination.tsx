@@ -3,6 +3,7 @@ import styles from "./Destination.module.scss";
 import DestinationNav from "./DestinationNav";
 import data from "../../data.json";
 import {useBackgroundImage} from "../../hooks/useBackgroundImage";
+import useSwipeNavigation from "../../hooks/useSwipeNavigation";
 
 type Destination = {
   name: string;
@@ -23,8 +24,12 @@ export default function Destination() {
   const currentDestinationData: Destination | undefined = destinationData.find(
     (destination) => destination.name.toLowerCase() === currentDestination,
   );
+  const destinationPaths: string[] = destinationData.map((destination) =>
+    destination.name.toLowerCase(),
+  );
 
   useBackgroundImage();
+  useSwipeNavigation("destination", currentDestination, destinationPaths);
 
   if (currentDestinationData === undefined) {
     return <Navigate to="/404" />;

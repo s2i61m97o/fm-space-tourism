@@ -5,6 +5,7 @@ import data from "../../data.json";
 import useScreenSize from "../../hooks/useScreenSize";
 import styles from "./Technology.module.scss";
 import TechNav from "./TechNav";
+import useSwipeNavigation from "../../hooks/useSwipeNavigation";
 
 type Tech = {
   name: string;
@@ -17,7 +18,6 @@ type Tech = {
 };
 
 export default function Technology() {
-  useBackgroundImage();
   const screenSize = useScreenSize();
 
   const techData: Tech[] = data.technology;
@@ -25,6 +25,12 @@ export default function Technology() {
   const tech: Tech | undefined = techData.find(
     (tech) => tech.name.toLowerCase().replace(" ", "-") === currentTech,
   );
+  const techPaths: string[] = techData.map((tech) =>
+    tech.name.toLowerCase().replace(" ", "-"),
+  );
+
+  useBackgroundImage();
+  useSwipeNavigation("technology", currentTech, techPaths);
 
   if (tech === undefined) {
     return <Navigate to="/404" />;
