@@ -1,5 +1,5 @@
 import {useParams, Navigate} from "react-router";
-import CrewNav from "./CrewNav";
+import InnerNav from "../../components/InnerNav/InnerNav";
 import clsx from "clsx";
 import styles from "./Crew.module.scss";
 import data from "../../data.json";
@@ -44,7 +44,7 @@ export default function Crew() {
             <h1 className={styles.memberInfo__name}>{crewMember.name}</h1>
             <p className={styles.memberInfo__bio}>{crewMember.bio}</p>
           </section>
-          <CrewNav />
+          <InnerNav variant="dot" paths={crewPaths} route="crew" />
         </section>
         <img
           src={`${import.meta.env.BASE_URL}${crewMember.images.webp}`}

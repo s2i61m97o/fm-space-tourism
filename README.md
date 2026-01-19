@@ -59,6 +59,7 @@ This is the first project that I am using React Router. After completing the Reu
 React Router uses client-side routing - serving the entire web app, minus some API or database requests that might be needed, and allowing the React app to load any new pages as part of the app without sending a request to the server again.
 
 As part of the Scrimba course, I learnt about `<BrowserRouter>`, `<Routes>` and `<Route>` elements, as well as creating layout components for pages that share UI, as well as `<Link>` and `<NavLink>` elements, all of which I have used in this project. In completing this project I also discovered the `<Navigate>` element, which I used to redirect a route.
+
 I found an incredibly useful feature of `NavLink` is it's render props, specifically 'isActive'. This allows for the easy conditional addition of styles or a class to the element, depending on whether it is the active link or not. I have used this on all the navigation elements in this project as they all have 'active' states, and using the built in 'isActive' property requires less, self-implemented JavaScript.
 
 ### TypeScript
@@ -83,7 +84,7 @@ This came in useful in several areas of this project, and will be something I us
 
 - [Learn Advanced React - Scrimba](https://scrimba.com/advanced-react-c02h) - Great course for learning about Reusability, Routing and Performance in React, with plenty of hands on (the keyboard) learning and critical thinking need. Not just a _"here's how you do it, now copy me"_ course.
 - [Learn TypeScript - Scrimba](https://scrimba.com/learn-typescript-c03c) - Another great course from Scrimba, plenty of keyboard use and thinking for yourself to take concepts and putting it into real code.
-- [Swiped Events NPM Package](https://www.npmjs.com/package/swiped-events) - allows for the addition of "swiped" events to event listeners. The npm package I used to allow users to swipe navigate through the content of this projects pages
+- [Swiped Events NPM Package](https://www.npmjs.com/package/swiped-events) - allows for the addition of "swiped" events to event listeners. This is the npm package I used to allow users to swipe navigate through the content of this projects pages.
 
 ## Author
 

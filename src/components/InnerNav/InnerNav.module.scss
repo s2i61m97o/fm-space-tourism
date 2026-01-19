@@ -1,0 +1,102 @@
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.nameNav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(v.$sp-6, -1.4091rem + 14.5455vw, v.$sp-8);
+  margin-block: v.$sp-6;
+
+  @include mq.lg {
+    justify-content: flex-start;
+  }
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: t.$color-secondary;
+    @include t.destinationNav;
+    padding-bottom: v.$sp-3;
+
+    &:hover {
+      border-bottom: 3px solid v.$color-blue-300;
+    }
+  }
+}
+
+a.activeName {
+  border-bottom: 3px solid v.$color-white;
+  color: v.$color-white;
+}
+
+.dotNav {
+  display: flex;
+  justify-content: center;
+  gap: v.$sp-4;
+  margin-block: v.$sp-8;
+
+  @include mq.lg {
+    justify-content: flex-start;
+  }
+
+  a {
+    width: clamp(0.625rem, 0.2679rem + 0.744vw, 0.9375rem);
+    height: clamp(0.625rem, 0.2679rem + 0.744vw, 0.9375rem);
+    background-color: rgb(from v.$color-white r g b / 0.2);
+    border-radius: 9999px;
+    color: v.$color-text-primary;
+    text-decoration: none;
+    font-size: 0;
+
+    &:hover {
+      background-color: v.$color-white;
+    }
+  }
+}
+
+a.activeDot {
+  background-color: v.$color-white;
+}
+
+.numberNav {
+  display: flex;
+  justify-content: center;
+  margin-block: v.$sp-8 v.$sp-10;
+  gap: v.$sp-4;
+
+  @include mq.lg {
+    flex-direction: column;
+    margin-inline-end: v.$sp-8;
+    gap: v.$sp-8;
+  }
+
+  a {
+    text-decoration: none;
+    color: t.$color-primary;
+    background-color: transparent;
+    border: 1px solid rgb(from v.$color-white r g b / 0.25);
+    border-radius: 9999px;
+    @include t.font(
+      v.$font-heading,
+      clamp(v.$text-lg, 0.8169rem + 1.3146vw, v.$text-4xl)
+    );
+    min-height: clamp(v.$sp-10, 1.6197rem + 3.7559vw, v.$sp-20);
+    min-width: clamp(v.$sp-10, 1.6197rem + 3.7559vw, v.$sp-20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: rgb(from v.$color-white r g b / 0.8);
+      border-color: rgb(from v.$color-white r g b / 0.8);
+      color: v.$color-blue-950;
+    }
+  }
+}
+
+a.activeNumber {
+  background-color: v.$color-white;
+  border-color: v.$color-white;
+  color: v.$color-blue-950;
+}

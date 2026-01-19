@@ -1,6 +1,6 @@
 import {Navigate, useParams} from "react-router";
 import styles from "./Destination.module.scss";
-import DestinationNav from "./DestinationNav";
+import InnerNav from "../../components/InnerNav/InnerNav";
 import data from "../../data.json";
 import {useBackgroundImage} from "../../hooks/useBackgroundImage";
 import useSwipeNavigation from "../../hooks/useSwipeNavigation";
@@ -25,7 +25,7 @@ export default function Destination() {
     (destination) => destination.name.toLowerCase() === currentDestination,
   );
   const destinationPaths: string[] = destinationData.map((destination) =>
-    destination.name.toLowerCase(),
+    destination.name.toLowerCase().replace(" ", "-"),
   );
 
   useBackgroundImage();
@@ -49,7 +49,11 @@ export default function Destination() {
           />
         </section>
         <section className={styles.contentContainer}>
-          <DestinationNav />
+          <InnerNav
+            variant="name"
+            paths={destinationPaths}
+            route="destination"
+          />
           <h1 className={styles.contentContainer__title}>
             {currentDestinationData.name}
           </h1>

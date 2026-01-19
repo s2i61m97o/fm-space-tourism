@@ -4,7 +4,7 @@ import clsx from "clsx";
 import data from "../../data.json";
 import useScreenSize from "../../hooks/useScreenSize";
 import styles from "./Technology.module.scss";
-import TechNav from "./TechNav";
+import InnerNav from "../../components/InnerNav/InnerNav";
 import useSwipeNavigation from "../../hooks/useSwipeNavigation";
 
 type Tech = {
@@ -56,7 +56,9 @@ export default function Technology() {
           alt={tech.images.alt}
           className={styles.content__img}
         />
-        {screenSize < 1024 ? <TechNav /> : undefined}
+        {screenSize < 1024 ? (
+          <InnerNav variant="number" paths={techPaths} route="technology" />
+        ) : undefined}
         <section
           className={clsx(
             screenSize < 1023 ? "container" : undefined,
@@ -67,7 +69,9 @@ export default function Technology() {
           <h1 className={styles.content__name}>{tech.name}</h1>
           <p className={styles.content__description}>{tech.description}</p>
         </section>
-        {screenSize < 1024 ? undefined : <TechNav />}
+        {screenSize < 1024 ? undefined : (
+          <InnerNav variant="number" paths={techPaths} route="technology" />
+        )}
       </main>
     </>
   );
