@@ -1,7 +1,7 @@
 @import "./styles/tokens.css";
 @import "./styles/reset.css";
-/* @import "./foundation/base.css"; */
-@import "./styles/sass/utils.scss";
+@import "./foundation/sass/base.scss";
+/* @import "./styles/sass/utils.scss"; */
 @import "./styles/sass/background.scss";
 
 html,
