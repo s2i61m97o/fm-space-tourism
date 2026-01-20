@@ -1,7 +1,11 @@
 @use "./breakpoints" as *;
 
+body {
+  background-color: black;
+}
+
 .home {
-  background-image: url("/images/home/background-home-mobile.jpg");
+  // background-image: url("/images/home/background-home-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 

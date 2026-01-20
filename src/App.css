@@ -1,14 +1,5 @@
 @import "./styles/tokens.css";
 @import "./styles/reset.css";
-@import "./foundation/sass/base.scss";
+@import "./styles/sass/base.scss";
 /* @import "./styles/sass/utils.scss"; */
 @import "./styles/sass/background.scss";
-
-html,
-body {
-  overflow-x: hidden;
-  max-width: 100vw;
-  min-height: 100vh;
-  margin: 0;
-  max-height: fit-content;
-}
