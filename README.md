@@ -56,7 +56,7 @@ This is the first project that I am using React Router. After completing the Reu
 
 #### Routing
 
-React Router uses client-side routing - serving the entire web app, minus some API or database requests that might be needed, and allowing the React app to load any new pages as part of the app without sending a request to the server again.
+React Router uses client-side routing - serving the entire web app, minus some API or database requests that might be needed, and allowing the React app to load any new pages as part of the app without sending a request to the server again. I used the declarative mode of React Router, as that was the one taught in the Scrimba course. However I will look to refactor this to the data or framework mode in the near future, as there are additional components and hooks from React-Router that cannot be used with the declarative mode.
 
 As part of the Scrimba course, I learnt about `<BrowserRouter>`, `<Routes>` and `<Route>` elements, as well as creating layout components for pages that share UI, as well as `<Link>` and `<NavLink>` elements, all of which I have used in this project. In completing this project I also discovered the `<Navigate>` element, which I used to redirect a route.
 
