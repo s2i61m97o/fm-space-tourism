@@ -28,12 +28,12 @@ Users should be able to:
 
 ### Screenshot
 
-<!-- ![](./screenshot.jpg) -->
+![Completed Site Desktop Screenshot](./public/screenshots/space-tourism-home-screenshot.png)
 
 ### Links
 
-<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
-<!-- - Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
+- [Github Repo](https://github.com/s2i61m97o/fm-space-tourism)
+- [Live Site](https://s2i61m97o.github.io/fm-space-tourism/)
 
 ## My process
 
