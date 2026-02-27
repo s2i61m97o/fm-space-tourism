@@ -6,6 +6,8 @@ import styles from "./Header.module.scss";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
 import clsx from "clsx";
+import useBreakpoint from "@/hooks/useBreakpoint";
+import {BREAKPOINTS} from "@/constants/breakpoints";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -17,7 +19,11 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <Link href="/">
+      <Link
+        href="/"
+        className={styles.header__logo}
+        aria-label="space tourism homepage"
+      >
         <Logo />
       </Link>
       <button className={styles.header__button} onClick={toggleMenu}>
@@ -29,33 +35,55 @@ export default function Header() {
           styles.nav__container,
           open && styles.nav__containerOpen,
         )}
-        inert={!open}
+        inert={useBreakpoint(BREAKPOINTS.md) && !open}
       >
         <nav className={styles.nav__menu}>
-          <Link
-            href="/"
-            className={clsx(pathname === "/" && styles.nav__active)}
-          >
-            <span aria-hidden>00</span> Home
-          </Link>
-          <Link
-            href="/"
-            className={clsx(pathname === "/destination" && styles.nav__active)}
-          >
-            <span aria-hidden>01</span> Destination
-          </Link>
-          <Link
-            href="/"
-            className={clsx(pathname === "/crew" && styles.nav__active)}
-          >
-            <span aria-hidden>02</span> Crew
-          </Link>
-          <Link
-            href="/"
-            className={clsx(pathname === "/technology" && styles.nav__active)}
-          >
-            <span aria-hidden>03</span> Technology
-          </Link>
+          <ul>
+            <li>
+              <Link
+                href="/destination"
+                className={clsx(pathname === "/" && styles.nav__active)}
+              >
+                <span aria-hidden>00</span> Home{" "}
+                <span className="visually-hidden">
+                  - space tourism homepage
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/crew"
+                className={clsx(
+                  pathname === "/destination" && styles.nav__active,
+                )}
+              >
+                <span aria-hidden>01</span> Destination{" "}
+                <span className="visually-hidden">
+                  - discover our destinations
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/technology"
+                className={clsx(pathname === "/crew" && styles.nav__active)}
+              >
+                <span aria-hidden>02</span> Crew{" "}
+                <span className="visually-hidden">- meet our crew</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/"
+                className={clsx(
+                  pathname === "/technology" && styles.nav__active,
+                )}
+              >
+                <span aria-hidden>03</span> Technology{" "}
+                <span className="visually-hidden">- check out our tech</span>
+              </Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>

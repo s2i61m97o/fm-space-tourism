@@ -3,15 +3,52 @@
 @use "../../../styles/sass/variables" as v;
 
 .header {
-  display: flex;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto;
   justify-content: space-between;
-  padding: v.$sp-6;
+  position: relative;
+  @include mq.md {
+    margin: 0;
+    justify-content: unset;
+    justify-items: end;
+  }
+  @include mq.lg {
+    margin-block: v.$sp-10;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    inset-inline: v.$sp-40 675px;
+    background-color: rgb(from v.$color-white r g b / 0.25);
+    display: none;
+    pointer-events: none;
+    z-index: 2;
+    @include mq.lg {
+      display: block;
+    }
+  }
+}
+
+.header__logo {
+  margin-inline-start: v.$sp-6;
+  @include mq.md {
+    justify-self: center;
+  }
+  @include mq.lg {
+    justify-self: start;
+    margin-inline-start: v.$sp-16;
+  }
 }
 
 .header__button {
   background: none;
   border: none;
   color: v.$color-blue-300;
+  margin: v.$sp-6;
   z-index: 10;
   @include mq.md {
     display: none;
@@ -19,7 +56,7 @@
 }
 
 .nav__container {
-  background-color: rgb(from v.$color-blue-950 r g b / 0.5);
+  background-color: rgb(from v.$color-white r g b / 0.05);
   backdrop-filter: blur(10px);
   bottom: 0;
   overflow: hidden;
@@ -36,10 +73,13 @@
   }
 
   @include mq.md {
-    padding: 0;
+    padding: 0 v.$sp-10 0 v.$sp-30;
     position: static;
     transform: translate(0);
     visibility: visible;
+  }
+  @include mq.lg {
+    padding-inline: v.$sp-40 v.$sp-16;
   }
 }
 
@@ -49,22 +89,35 @@
 }
 
 .nav__menu {
-  display: grid;
-  gap: v.$sp-8;
   margin-top: v.$sp-30;
   text-transform: uppercase;
-  @include t.route;
   @include mq.md {
-    align-items: center;
-    gap: v.$sp-12;
-    grid-template-columns: repeat(4, max-content);
     margin: 0;
+  }
+
+  ul {
+    display: grid;
+    gap: v.$sp-8;
+    justify-items: stretch;
+    padding: 0;
+
+    @include mq.md {
+      gap: v.$sp-12;
+      grid-template-columns: repeat(4, auto);
+    }
+  }
+
+  li {
+    display: flex;
   }
 
   a {
     color: v.$color-text-primary;
     padding-inline-end: v.$sp-24;
     text-decoration: none;
+    width: 100%;
+    @include t.navigation;
+
     &:visited {
       color: v.$color-text-primary;
     }
@@ -72,7 +125,8 @@
       cursor: pointer;
     }
     @include mq.md {
-      padding: 0;
+      padding-block: v.$sp-10;
+      padding-inline: 0;
     }
   }
 
