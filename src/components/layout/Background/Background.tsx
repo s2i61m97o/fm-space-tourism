@@ -6,7 +6,7 @@ type PageName = "home" | "destination" | "crew" | "technology";
 export default function Background({page}: {page: PageName}) {
   return (
     <div className={styles.container} aria-hidden>
-      <picture>
+      <picture className={styles.image__container}>
         <source
           media="(min-width: 1024px)"
           srcSet={backgroundMap[page].desktop.src}

@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.scss";
 import Header from "@/components/layout/Header/Header";
-import {barlow, bellefair} from "@/styles/fonts";
+import {barlow, bellefair, barlow_condensed} from "@/styles/fonts";
 
 export const metadata: Metadata = {
   title: "",
@@ -14,7 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={` ${barlow.variable} ${bellefair.variable}`}>
+    <html
+      lang="en"
+      className={` ${barlow.variable} ${bellefair.variable} ${barlow_condensed.variable}`}
+    >
       <body>
         <Header />
         {children}

@@ -4,6 +4,37 @@
 @mixin navigation {
   font-family: $font-secondary;
   font-size: $text-base;
-  font-weight: normal;
+  font-weight: 400;
   letter-spacing: 2px;
+  color: $color-text-primary;
+}
+
+@mixin site-heading {
+  font-family: $font-primary;
+  font-size: clamp($text-7xl, 1.1832rem + 16.285vw, $text-9xl);
+  font-weight: 400;
+  color: $color-text-primary;
+}
+
+@mixin site-subheading {
+  color: $color-text-secondary;
+  font-family: $font-secondary;
+  font-size: clamp($text-base, 0.2844rem + 3.0534vw, $text-3xl);
+  font-weight: 400;
+  letter-spacing: clamp(2.5px, 0.0682rem + 0.5089vw, 4px);
+  line-height: $lh-normal;
+}
+
+@mixin body {
+  color: $color-text-secondary;
+  font-family: $font-body;
+  font-size: clamp($text-sm, 0.8715rem + 0.2817vw, $text-lg);
+  font-weight: 400;
+  line-height: $lh-relaxed;
+}
+
+@mixin explore {
+  color: $color-blue-950;
+  font-family: $font-primary;
+  font-size: clamp($text-lg, 0.2901rem + 3.5623vw, $text-3xl);
 }

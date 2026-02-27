@@ -112,15 +112,11 @@
   }
 
   a {
-    color: v.$color-text-primary;
     padding-inline-end: v.$sp-24;
     text-decoration: none;
     width: 100%;
     @include t.navigation;
 
-    &:visited {
-      color: v.$color-text-primary;
-    }
     &:hover {
       cursor: pointer;
     }

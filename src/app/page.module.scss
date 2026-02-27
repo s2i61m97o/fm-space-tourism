@@ -1,0 +1,71 @@
+@use "../styles/sass/variables" as v;
+@use "../styles/sass/typography" as t;
+@use "../styles/sass/breakpoints" as mq;
+
+.container {
+  display: grid;
+  gap: clamp(v.$sp-16, 15.7252rem + -24.4275vw, v.$sp-20);
+  justify-items: center;
+  margin-inline: clamp(v.$sp-6, -4.7023rem + 26.4631vw, v.$sp-32);
+  margin-block: clamp(0rem, -7.6336rem + 32.57vw, v.$sp-32);
+  @include mq.lg {
+    align-items: end;
+    grid-template-columns: 1fr 1fr;
+    inset-inline: clamp(v.$sp-5, -20.2885rem + 33.6538vw, v.$sp-40);
+    margin-inline: 0;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+.hero {
+  text-align: center;
+
+  @include mq.lg {
+    text-align: left;
+  }
+
+  p {
+    @include t.body;
+  }
+}
+
+.hero__title,
+.hero__subtitle {
+  text-transform: uppercase;
+}
+
+.hero__title {
+  @include t.site-heading;
+}
+
+.hero__subtitle {
+  @include t.site-subheading;
+}
+
+.explore__container {
+  @include mq.lg {
+    align-self: center;
+    justify-self: end;
+  }
+}
+
+.explore__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  @include t.explore;
+}
+
+.explore__btn {
+  align-items: center;
+  background-color: v.$color-white;
+  border-radius: 50%;
+  display: flex;
+  height: clamp(9rem, 6.1831rem + 12.0188vw, 17rem);
+  justify-content: center;
+  width: clamp(9rem, 6.1831rem + 12.0188vw, 17rem);
+
+  &:hover {
+    box-shadow: 0 0 0 v.$sp-20 rgb(from v.$color-white r g b / 0.15);
+  }
+}

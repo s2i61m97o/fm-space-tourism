@@ -15,9 +15,9 @@ $color-text-primary: var(--color-text-primary);
 $color-text-secondary: var(--color-text-secondary);
 
 // TYPOGRAPHY
-$font-heading: var(--font-bellefair); //Bellefair
-$font-secondary: var(--font-barlow); // Barlow Condensed
-// $font-body: var(--font-body); // Barlow
+$font-primary: var(--font-bellefair); //Bellefair
+$font-secondary: var(--font-barlow_condensed); // Barlow Condensed
+$font-body: var(--font-barlow); // Barlow Condensed
 
 // TEXT SIZES
 $text-xs: var(--text-xs); // 14px
@@ -50,6 +50,7 @@ $sp-20: var(--space-20);
 $sp-22: var(--space-22); // 5.5rem
 $sp-24: var(--space-24);
 $sp-30: var(--space-30);
+$sp-32: var(--space-32);
 $sp-38: var(--space-38); // 9.5rem
 $sp-40: var(--space-40);
 $sp-48: var(--space-48); // 12rem

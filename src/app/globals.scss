@@ -1,3 +1,8 @@
 @use "../styles/tokens.css";
 @use "../styles/reset.css";
 @use "../styles/utilities.css";
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
