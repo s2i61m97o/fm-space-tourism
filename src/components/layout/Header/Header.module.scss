@@ -1,0 +1,90 @@
+@use "../../../styles/sass/breakpoints" as mq;
+@use "../../../styles/sass/typography" as t;
+@use "../../../styles/sass/variables" as v;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: v.$sp-6;
+}
+
+.header__button {
+  background: none;
+  border: none;
+  color: v.$color-blue-300;
+  z-index: 10;
+  @include mq.md {
+    display: none;
+  }
+}
+
+.nav__container {
+  background-color: rgb(from v.$color-blue-950 r g b / 0.5);
+  backdrop-filter: blur(10px);
+  bottom: 0;
+  overflow: hidden;
+  padding: v.$sp-8 v.$sp-0 v.$sp-8 v.$sp-8;
+  position: fixed;
+  right: 0;
+  transition: all 350ms ease-in;
+  transform: translateX(100%);
+  top: 0;
+  width: fit-content;
+  visibility: hidden;
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+
+  @include mq.md {
+    padding: 0;
+    position: static;
+    transform: translate(0);
+    visibility: visible;
+  }
+}
+
+.nav__containerOpen {
+  transform: translate(0);
+  visibility: visible;
+}
+
+.nav__menu {
+  display: grid;
+  gap: v.$sp-8;
+  margin-top: v.$sp-30;
+  text-transform: uppercase;
+  @include t.route;
+  @include mq.md {
+    align-items: center;
+    gap: v.$sp-12;
+    grid-template-columns: repeat(4, max-content);
+    margin: 0;
+  }
+
+  a {
+    color: v.$color-text-primary;
+    padding-inline-end: v.$sp-24;
+    text-decoration: none;
+    &:visited {
+      color: v.$color-text-primary;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    @include mq.md {
+      padding: 0;
+    }
+  }
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.nav__active {
+  border-inline-end: 3px solid v.$color-white;
+  @include mq.md {
+    border-block-end: 3px solid v.$color-white;
+    border-inline-end: unset;
+  }
+}
