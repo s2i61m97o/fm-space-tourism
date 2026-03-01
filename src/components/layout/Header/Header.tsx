@@ -26,7 +26,12 @@ export default function Header() {
       >
         <Logo />
       </Link>
-      <button className={styles.header__button} onClick={toggleMenu}>
+      <button
+        className={styles.header__button}
+        onClick={toggleMenu}
+        aria-label={open ? "close navigation menu" : "open navigation menu"}
+        aria-expanded={open}
+      >
         {open ? <Close /> : <Menu />}
       </button>
 
