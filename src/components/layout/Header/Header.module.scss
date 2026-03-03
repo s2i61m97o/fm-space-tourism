@@ -8,6 +8,8 @@
   grid-template-columns: auto auto;
   justify-content: space-between;
   position: relative;
+  z-index: v.$z-2;
+
   @include mq.md {
     margin: 0;
     justify-content: unset;
@@ -128,6 +130,7 @@
 
   span {
     font-weight: bold;
+    margin-inline-end: v.$sp-3;
   }
 }
 

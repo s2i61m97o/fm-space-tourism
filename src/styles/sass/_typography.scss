@@ -38,3 +38,46 @@
   font-family: $font-primary;
   font-size: clamp($text-lg, 0.2901rem + 3.5623vw, $text-3xl);
 }
+
+@mixin current-route {
+  color: $color-text-primary;
+  font-family: $font-secondary;
+  font-size: clamp(1rem, 0.7615rem + 1.0178vw, 1.25rem);
+  font-weight: 400;
+  letter-spacing: clamp(2.5px, 0.0682rem + 0.5089vw, 4px);
+  @include mq.md {
+    font-size: clamp(1.25rem, 0.6786rem + 1.1905vw, 1.75rem);
+  }
+}
+
+@mixin destination-title {
+  color: $color-text-primary;
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: clamp($text-6xl, 2.0687rem + 6.1069vw, $text-7xl);
+  @include mq.md {
+    font-size: clamp($text-7xl, 3.8571rem + 2.381vw, $text-8xl);
+  }
+}
+
+@mixin extra-info-title {
+  color: $color-text-secondary;
+  font-family: $font-secondary;
+  font-size: $text-xs;
+  font-weight: 400;
+}
+@mixin extra-info-content {
+  color: $color-text-primary;
+  font-family: $font-primary;
+  font-size: $text-3xl;
+  font-weight: 400;
+}
+
+@mixin destination-btn {
+  color: $color-text-secondary;
+  font-family: $font-secondary;
+  font-size: clamp($text-xs, 0.757rem + 0.5089vw, $text-base);
+  letter-spacing: 2px;
+  // @include mq.lg {
+  // }
+}

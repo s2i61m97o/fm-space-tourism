@@ -1,8 +1,11 @@
 @use "../styles/tokens.css";
 @use "../styles/reset.css";
-@use "../styles/utilities.css";
+@use "../styles//sass/utilities.scss";
 
+html,
 body {
   min-height: 100vh;
-  position: relative;
+  overflow-x: hidden;
+  max-width: 1500px;
+  margin-inline: auto;
 }

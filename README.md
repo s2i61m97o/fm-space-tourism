@@ -54,6 +54,10 @@ Users should be able to:
 
 The `.mediaMatch()` method can be used on the `Window` interface similarly to how CSS media queries work. This allowed me to set up a JavaScript media queries where needed. I create a useBreakpoint hook for reusability, with the desired breakpoint passed as a parameter, and the function returning true if equal to or above, and false if not.
 
+#### Create Custom CSS Properties in JavaScript
+
+#### A11Y for a TabPanel
+
 ### Continued development
 
 ### Useful resources

@@ -46,7 +46,7 @@ export default function Header() {
           <ul>
             <li>
               <Link
-                href="/destination"
+                href="/"
                 className={clsx(pathname === "/" && styles.nav__active)}
               >
                 <span aria-hidden>00</span> Home{" "}
@@ -57,7 +57,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/crew"
+                href="/destination"
                 className={clsx(
                   pathname === "/destination" && styles.nav__active,
                 )}
@@ -70,7 +70,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/technology"
+                href="/crew"
                 className={clsx(pathname === "/crew" && styles.nav__active)}
               >
                 <span aria-hidden>02</span> Crew{" "}
@@ -79,7 +79,7 @@ export default function Header() {
             </li>
             <li>
               <Link
-                href="/"
+                href="/technology"
                 className={clsx(
                   pathname === "/technology" && styles.nav__active,
                 )}
