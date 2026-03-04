@@ -3,16 +3,6 @@
 @use "../../styles/sass/breakpoints" as mq;
 
 .container {
-  display: grid;
-  gap: v.$sp-6;
-  grid-template-rows: repeat(4, auto);
-  grid-template-columns: 100%;
-  justify-items: center;
-  margin-block: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
-  margin-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
-  text-align: center;
-  overflow-x: hidden;
-
   @include mq.lg {
     grid-template-columns: 50% 50%;
     grid-template-rows: auto min-content auto;
@@ -25,7 +15,7 @@
   height: clamp(150px, 0.4294rem + 38.1679vw, 300px);
   grid-row: 2/3;
   margin-block: v.$sp-6;
-
+  overflow: hidden;
   position: relative;
   width: clamp(150px, 0.4294rem + 38.1679vw, 300px);
   @include mq.md {
@@ -41,9 +31,8 @@
 .img {
   height: auto;
   position: absolute;
-  transform: translateX(100vw);
+  transform: translate(100vw, 0);
   transition: all 1000ms ease-in-out;
-  visibility: hidden;
   width: clamp(150px, 0.4294rem + 38.1679vw, 300px);
   @include mq.lg {
     transform: translate(0, 100vw);
@@ -91,9 +80,8 @@
   grid-template-rows: repeat(4, max-content);
   justify-self: start;
   row-gap: v.$sp-4;
-  transform: translateX(calc(var(--destination-index) * (-100vw)));
+  transform: translate(calc(var(--destination-index) * (-100vw)), 0);
   transition: all 750ms linear;
-  visibility: hidden;
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
@@ -150,9 +138,4 @@
       @include t.extra-info-content;
     }
   }
-}
-
-.active {
-  transform: translateX(0);
-  visibility: visible;
 }

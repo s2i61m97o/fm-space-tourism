@@ -65,10 +65,7 @@ export default function Destination() {
         src={Images[destinationName].src}
         fill
         sizes="(min-width:1024px) 33vw, 40vw"
-        className={clsx(
-          styles.img,
-          destination.name === current && styles.active,
-        )}
+        className={clsx(styles.img, destination.name === current && "active")}
         placeholder="blur"
         blurDataURL={Images[destinationName].blurDataURL}
         alt={destination.image_alt}
@@ -83,7 +80,7 @@ export default function Destination() {
         aria-labelledby={`#${destination.name}Control`}
         className={clsx(
           styles.content,
-          destination.name === current && styles.active,
+          destination.name === current && "active",
         )}
         id={`${destination.name}Content`}
         key={destination.name}
@@ -108,9 +105,9 @@ export default function Destination() {
   return (
     <>
       <Background page="destination" />
-      <main className={styles.container}>
+      <main className={clsx("page-container", styles.container)}>
         <h3 className="current-page">
-          <span>01</span> pick your destination
+          <span>01</span>pick your destination
         </h3>
         <div className={styles.img__container}>{imageElements}</div>
         <div className={styles.btn__container} role="tablist">

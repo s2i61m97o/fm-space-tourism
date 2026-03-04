@@ -1,5 +1,6 @@
 @use "./typography" as t;
 @use "./breakpoints" as mq;
+@use "./variables" as v;
 
 .visually-hidden {
   position: absolute;
@@ -19,9 +20,54 @@
   @include mq.md {
     justify-self: start;
   }
+  @include mq.lg {
+    grid-row: 1 span 2;
+    grid-column: 1;
+  }
 
   span {
     filter: opacity(0.25);
     font-weight: 600;
+    margin-inline-end: v.$sp-6;
   }
+}
+
+.page-container {
+  display: grid;
+  gap: v.$sp-6;
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: 100%;
+  justify-items: center;
+  padding-block: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+  padding-inline: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+  text-align: center;
+  overflow: hidden;
+  @include mq.lg {
+    padding-inline-start: 10rem;
+  }
+}
+
+.carousel {
+  display: grid;
+  column-gap: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+  grid-template-columns: repeat(
+    4,
+    calc(100vw - clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10))
+  );
+  justify-self: start;
+  row-gap: v.$sp-4;
+  transform: translateX(calc(var(--carousel-index) * (-100vw)));
+  transition: all 750ms linear;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+  @include mq.lg {
+    align-self: end;
+    row-gap: v.$sp-8;
+  }
+}
+
+.active {
+  transform: translate(0, 0) !important;
 }

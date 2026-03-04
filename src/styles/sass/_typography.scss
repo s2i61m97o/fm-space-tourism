@@ -78,6 +78,21 @@
   font-family: $font-secondary;
   font-size: clamp($text-xs, 0.757rem + 0.5089vw, $text-base);
   letter-spacing: 2px;
-  // @include mq.lg {
-  // }
+}
+
+@mixin heading {
+  color: $color-text-primary;
+  font-family: $font-primary;
+  font-size: clamp($text-2xl, 0.5458rem + 4.0712vw, $text-5xl);
+  font-weight: 400;
+  @include mq.md {
+    font-size: clamp($text-5xl, 1.3571rem + 2.381vw, $text-6xl);
+  }
+}
+
+@mixin subheading {
+  color: rgb(from $color-text-primary r g b / 0.5);
+  font-family: $font-primary;
+  font-size: clamp($text-lg, 0.8169rem + 1.3146vw, $text-4xl);
+  font-weight: 400;
 }

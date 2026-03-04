@@ -1,0 +1,120 @@
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.container {
+  @include mq.lg {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: max-content auto auto;
+    text-align: left;
+  }
+}
+
+.crew__container {
+  @include mq.lg {
+    grid-area: 2/1/3/2;
+    justify-items: start;
+    align-self: stretch;
+  }
+}
+
+.crew__card {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  max-width: 552px;
+  justify-self: center;
+  margin-block-start: v.$sp-10;
+  margin-inline-end: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+  @include mq.lg {
+    justify-self: left;
+    grid-template-rows: max-content;
+  }
+}
+
+.card__role {
+  text-transform: uppercase;
+  @include t.subheading;
+}
+
+.card__name {
+  text-transform: uppercase;
+  @include t.heading;
+}
+
+.card__bio {
+  grid-row: 2/3;
+  @include t.body;
+  @include mq.lg {
+    grid-row: unset;
+  }
+}
+
+.btn__container {
+  display: flex;
+  gap: v.$sp-4;
+  z-index: 1;
+  @include mq.lg {
+    grid-column: 1;
+    justify-self: start;
+    margin-block-end: v.$sp-12;
+  }
+}
+
+.btn {
+  background-color: rgb(from v.$color-white r g b / 0.2);
+  border: none;
+  border-radius: 50%;
+  height: 11px;
+  width: 10px;
+
+  &:hover {
+    background-color: rgb(from v.$color-white r g b / 0.5);
+    cursor: pointer;
+  }
+}
+
+.btn__Active {
+  background-color: v.$color-white;
+}
+
+.img__container {
+  height: clamp(21.25rem, 8.1298rem + 55.9796vw, 35rem);
+  justify-items: center;
+  margin-block-start: v.$sp-8;
+  @include mq.md {
+    height: clamp(35rem, 22.5714rem + 25.8929vw, 45.875rem);
+  }
+  @include mq.lg {
+    grid-area: 1/2/4/-1;
+    width: 50%;
+  }
+}
+
+.img {
+  height: 100%;
+  justify-self: center;
+  width: auto;
+  @include mq.lg {
+    justify-self: left;
+  }
+}
+
+.mask__container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  @include mq.lg {
+    justify-self: left;
+    width: 50%;
+  }
+}
+
+.img__mask {
+  background: linear-gradient(180deg, transparent 77%, v.$color-blue-950 100%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
