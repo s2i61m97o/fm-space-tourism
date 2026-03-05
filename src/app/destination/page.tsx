@@ -7,6 +7,7 @@ import data from "@/data/destination.json";
 import {Images} from "@/assets/destination";
 import {useState, useRef, useEffect} from "react";
 import clsx from "clsx";
+import {handleTabChange} from "@/utilities/handleTabChange";
 
 export default function Destination() {
   const destinationData = data as Destination[];
@@ -19,33 +20,6 @@ export default function Destination() {
   const isMounted = useRef(false);
 
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
-  const handleTabChange = (e: React.KeyboardEvent, index: number) => {
-    const total = destinationsArr.length;
-    let newIndex: number | null = null;
-
-    switch (e.key) {
-      case "ArrowRight":
-      case "ArrowDown":
-        newIndex = (index + 1) % total;
-        break;
-      case "ArrowLeft":
-      case "ArrowUp":
-        newIndex = (index - 1 + total) % total;
-        break;
-      case "Home":
-        newIndex = 0;
-        break;
-      case "End":
-        newIndex = total - 1;
-        break;
-      default:
-        return;
-    }
-
-    e.preventDefault();
-    setCurrent(destinationsArr[newIndex]);
-  };
 
   useEffect(() => {
     if (!isMounted.current) {
@@ -123,7 +97,9 @@ export default function Destination() {
                 id={`${d}Control`}
                 key={d}
                 onClick={() => setCurrent(d)}
-                onKeyDown={(e) => handleTabChange(e, index)}
+                onKeyDown={(e) =>
+                  handleTabChange(e, setCurrent, index, destinationsArr)
+                }
                 role="tab"
                 tabIndex={d === current ? 0 : -1}
                 ref={(el) => {
