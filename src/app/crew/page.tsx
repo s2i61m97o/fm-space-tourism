@@ -2,10 +2,10 @@ import clsx from "clsx";
 import styles from "./page.module.scss";
 import Background from "@/components/layout/Background/Background";
 import data from "@/data/crew.json";
-import {TabPanel} from "@/components/ui/TabPanel/TabPanel";
+import TabPanel from "@/components/ui/TabPanel/TabPanel";
 import TabNav from "@/components/ui/TabNav/TabNav";
 import TabImage from "@/components/ui/TabImage/TabImage";
-import type {Crew} from "@/types/crew";
+import type {Crew} from "@/types";
 
 export default async function Crew({
   searchParams,
@@ -28,7 +28,7 @@ export default async function Crew({
   const imageData = crewData.map((c) => {
     return {
       title: c.name,
-      img: c.img,
+      data: c.img,
     };
   });
   return (

@@ -8,7 +8,13 @@ export default function TabImage({
   className,
   variant,
 }: {
-  img: {title: string; img: {src: string; alt: string}}[];
+  img: {
+    title: string;
+    data: {
+      src: string | {landscape: string; portrait: string};
+      alt: string;
+    };
+  }[];
   activeTab: number;
   className?: string;
   variant: "Square" | "Portrait" | "Fill";
@@ -31,12 +37,29 @@ export default function TabImage({
               styles.img__container + variant,
             )}
           >
-            <Image
-              src={`/assets/${img.img.src}`}
-              alt={img.img.alt}
-              fill
-              className={styles.img}
-            />
+            {variant === "Fill" && typeof img.data.src !== "string" ? (
+              <>
+                <Image
+                  src={`/assets/${img.data.src.landscape}`}
+                  alt={img.data.alt}
+                  fill
+                  className={clsx(styles.img, styles.img__landscape)}
+                />
+                <Image
+                  src={`/assets/${img.data.src.portrait}`}
+                  alt={img.data.alt}
+                  fill
+                  className={clsx(styles.img, styles.img__portrait)}
+                />
+              </>
+            ) : (
+              <Image
+                src={`/assets/${img.data.src}`}
+                alt={img.data.alt}
+                fill
+                className={styles.img}
+              />
+            )}
           </div>
         );
       })}

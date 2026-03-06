@@ -42,11 +42,11 @@
 @mixin current-route {
   color: $color-text-primary;
   font-family: $font-secondary;
-  font-size: clamp(1rem, 0.7615rem + 1.0178vw, 1.25rem);
+  font-size: clamp($text-base, 0.7615rem + 1.0178vw, $text-xl);
   font-weight: 400;
   letter-spacing: clamp(2.5px, 0.0682rem + 0.5089vw, 4px);
   @include mq.md {
-    font-size: clamp(1.25rem, 0.6786rem + 1.1905vw, 1.75rem);
+    font-size: clamp($text-xl, 0.6786rem + 1.1905vw, $text-3xl);
   }
 }
 

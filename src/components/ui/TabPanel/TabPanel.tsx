@@ -1,4 +1,4 @@
-import {NormalisedData} from "@/types/data";
+import {NormalisedData} from "@/types";
 import styles from "./TabPanel.module.scss";
 import clsx from "clsx";
 
@@ -8,7 +8,7 @@ interface TabPanelProps {
   className?: string;
 }
 
-export const TabPanel = ({activeTab, data, className}: TabPanelProps) => {
+export default function TabPanel({activeTab, data, className}: TabPanelProps) {
   return (
     <div
       className={clsx("carousel", className)}
@@ -64,4 +64,4 @@ export const TabPanel = ({activeTab, data, className}: TabPanelProps) => {
       })}
     </div>
   );
-};
+}

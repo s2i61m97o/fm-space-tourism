@@ -11,7 +11,7 @@
   }
 }
 
-.carousel__img {
+.tabImg {
   @include mq.lg {
     grid-row: span 2;
     margin-inline-start: 10%;
@@ -20,9 +20,17 @@
     }
   }
 }
-
-.carousel__controls {
+.tabNav {
   @include mq.lg {
     grid-area: 2/2/3/3;
+  }
+}
+
+// FIX
+.tabPanel {
+  @include mq.lg {
+    div {
+      max-width: 455px;
+    }
   }
 }

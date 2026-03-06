@@ -39,3 +39,38 @@
     );
   }
 }
+
+.img__containerFill {
+  aspect-ratio: 515/527;
+  // allow img to be full screen width
+  width: 100vw;
+  right: calc(clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10) / 2);
+  @include mq.sm {
+    aspect-ratio: 384/155;
+  }
+  @include mq.lg {
+    aspect-ratio: 515/527;
+    width: 35vw;
+    justify-self: start;
+    right: 0;
+  }
+}
+
+.img__landscape {
+  display: none;
+  @include mq.sm {
+    display: block;
+  }
+  @include mq.lg {
+    display: none;
+  }
+}
+.img__portrait {
+  display: block;
+  @include mq.sm {
+    display: none;
+  }
+  @include mq.lg {
+    display: block;
+  }
+}

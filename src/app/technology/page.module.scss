@@ -1,0 +1,31 @@
+@use "../../styles/sass/variables" as v;
+@use "../../styles/sass/typography" as t;
+@use "../../styles/sass/breakpoints" as mq;
+
+.container {
+  align-items: center;
+  grid-template-columns: max-content 40vw 40vw;
+  grid-template-rows: min-content 40vh 10vh;
+}
+
+.tabNav {
+  @include mq.lg {
+    flex-direction: column;
+    grid-area: 2/1/3/2;
+    margin-inline-end: v.$sp-16;
+  }
+}
+
+.tabImg {
+  @include mq.lg {
+    grid-area: 2/3/4/4;
+    grid-row: span 3;
+  }
+}
+
+.tabPanel {
+  @include mq.lg {
+    align-self: center;
+    grid-area: 2/2/3/3;
+  }
+}

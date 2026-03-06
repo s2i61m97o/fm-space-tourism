@@ -50,3 +50,27 @@
 .btn__dotActive {
   background-color: v.$color-white;
 }
+
+.btn__number {
+  aspect-ratio: 1/1;
+  background: transparent;
+  border: solid 1px rgb(from v.$color-white r g b / 0.25);
+  color: v.$color-text-primary;
+  border-radius: 999px;
+  width: clamp(v.$sp-10, 1.5458rem + 4.0712vw, v.$sp-14);
+  @include t.subheading;
+  @include mq.md {
+    width: clamp(v.$sp-14, 1.7857rem + 3.5714vw, v.$sp-20);
+  }
+
+  &:hover {
+    border-color: v.$color-white;
+    cursor: pointer;
+  }
+}
+
+.btn__numberActive {
+  background-color: v.$color-white;
+  border-color: white;
+  color: v.$color-blue-950;
+}

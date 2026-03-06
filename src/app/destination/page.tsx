@@ -1,10 +1,10 @@
 import Background from "@/components/layout/Background/Background";
 import styles from "./page.module.scss";
-import type {Destination, DestinationList} from "@/types/destinations";
+import type {Destination, DestinationList} from "@/types";
 import data from "@/data/destination.json";
 import clsx from "clsx";
 import TabNav from "@/components/ui/TabNav/TabNav";
-import {TabPanel} from "@/components/ui/TabPanel/TabPanel";
+import TabPanel from "@/components/ui/TabPanel/TabPanel";
 import TabImage from "@/components/ui/TabImage/TabImage";
 
 export default async function Destination({
@@ -30,7 +30,7 @@ export default async function Destination({
   const imageData = destinationData.map((d) => {
     return {
       title: d.name,
-      img: d.img,
+      data: d.img,
     };
   });
 
@@ -44,19 +44,19 @@ export default async function Destination({
         <TabImage
           img={imageData}
           activeTab={currentTab}
-          className={styles.carousel__img}
+          className={styles.tabImg}
           variant="Square"
         />
         <TabNav
           tabs={destinationsArr}
           activeTab={tab}
-          className={styles.carousel__controls}
+          className={styles.tabNav}
           variant="name"
         />
         <TabPanel
           activeTab={currentTab}
           data={normalisedData}
-          className={styles.carousel__panel}
+          className={styles.tabPanel}
         />
       </main>
     </>

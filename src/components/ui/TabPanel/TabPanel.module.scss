@@ -12,7 +12,6 @@
   @include mq.lg {
     grid-template-rows: repeat(4, min-content);
     justify-self: left;
-    max-width: 455px;
     text-align: left;
   }
 }
