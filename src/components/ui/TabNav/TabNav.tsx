@@ -9,10 +9,12 @@ export default function TabNav({
   tabs,
   activeTab,
   className,
+  variant,
 }: {
   tabs: string[];
   activeTab: string;
   className?: string;
+  variant: "name" | "number" | "dot";
 }) {
   const path = usePathname();
   const router = useRouter();
@@ -33,16 +35,39 @@ export default function TabNav({
     tabRefs.current[index]?.focus();
   }, [activeTab, tabs]);
 
+  const buttonClasses = {
+    name: {
+      class: styles.btn__name,
+      active: styles.btn__nameActive,
+    },
+    number: {
+      class: styles.btn__number,
+      active: styles.btn__numberActive,
+    },
+    dot: {
+      class: styles.btn__dot,
+      active: styles.btn__dotActive,
+    },
+  };
+
   return (
-    <div className={clsx(styles.btn__container, className)} role="tablist">
+    <div
+      className={clsx(
+        styles.btn__container,
+        className,
+        variant === "name" && styles.gap__lg,
+      )}
+      role="tablist"
+    >
       {tabs.map((tab, index) => {
         return (
           <button
             aria-controls={`#${tab}Content`}
+            aria-label={variant !== "name" ? tab : undefined}
             aria-selected={tab === activeTab ? true : false}
             className={clsx(
-              styles.button,
-              tab === activeTab && styles.buttonActive,
+              buttonClasses[variant].class,
+              tab === activeTab && buttonClasses[variant].active,
             )}
             id={`${tab}Control`}
             key={tab}
@@ -56,7 +81,7 @@ export default function TabNav({
               tabRefs.current[index] = el;
             }}
           >
-            {tab}
+            {variant === "name" ? tab : variant === "number" ? index + 1 : ""}
           </button>
         );
       })}

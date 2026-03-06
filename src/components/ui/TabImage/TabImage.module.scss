@@ -3,26 +3,39 @@
 @use "../../../styles/sass/variables" as v;
 
 .img__container {
-  height: clamp(150px, 0.4294rem + 38.1679vw, 300px);
-  grid-row: 2/3;
   justify-self: center;
-  margin-block: v.$sp-6;
   position: relative;
-  width: clamp(150px, 0.4294rem + 38.1679vw, 300px);
-  @include mq.md {
-    height: clamp(300px, 5.8929rem + 26.7857vw, 480px);
-    width: clamp(300px, 5.8929rem + 26.7857vw, 480px);
-  }
   @include mq.lg {
     grid-row: span 2;
   }
 }
 
-.img {
-  height: auto;
-  //   width: clamp(150px, 0.4294rem + 38.1679vw, 300px);
+.img__containerSquare {
+  aspect-ratio: 1/1;
+  width: clamp(150px, 0.4294rem + 38.1679vw, 300px);
+  @include mq.md {
+    width: clamp(300px, 5.8929rem + 26.7857vw, 480px);
+  }
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    transition: none;
+.img__containerPortrait {
+  aspect-ratio: 41/50;
+  height: clamp(21.25rem, 8.1298rem + 55.9796vw, 35rem);
+  @include mq.md {
+    height: clamp(35rem, 22.5714rem + 25.8929vw, 45.875rem);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      transparent 77%,
+      v.$color-blue-950 100%
+    );
   }
 }

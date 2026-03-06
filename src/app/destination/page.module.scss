@@ -23,6 +23,6 @@
 
 .carousel__controls {
   @include mq.lg {
-    grid-area: 1/2/2/3;
+    grid-area: 2/2/3/3;
   }
 }

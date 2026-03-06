@@ -29,8 +29,20 @@ export const TabPanel = ({activeTab, data, className}: TabPanelProps) => {
             role="tabpanel"
             tabIndex={index === activeTab ? 0 : -1}
           >
-            {entry.subheading && <span>{entry.subheading}</span>}
-            <h1 className={styles.panel__heading}>{entry.heading}</h1>
+            {entry.subheading && (
+              <span className={styles.panel__subheading}>
+                {entry.subheading}
+              </span>
+            )}
+            <h1
+              className={clsx(
+                entry.subheading
+                  ? styles.panel__headingSmall
+                  : styles.panel__heading,
+              )}
+            >
+              {entry.heading.replaceAll("-", " ")}
+            </h1>
             <p className={styles.panel__body}>{entry.body}</p>
             {entry.dataFacts && <hr className={styles.contentBreak} />}
             {entry.dataFacts && (

@@ -6,10 +6,12 @@ export default function TabImage({
   img,
   activeTab,
   className,
+  variant,
 }: {
   img: {title: string; img: {src: string; alt: string}}[];
   activeTab: number;
-  className: string;
+  className?: string;
+  variant: "Square" | "Portrait" | "Fill";
 }) {
   return (
     <div
@@ -22,7 +24,13 @@ export default function TabImage({
     >
       {img.map((img) => {
         return (
-          <div key={img.title} className={styles.img__container}>
+          <div
+            key={img.title}
+            className={clsx(
+              styles.img__container,
+              styles.img__container + variant,
+            )}
+          >
             <Image
               src={`/assets/${img.img.src}`}
               alt={img.img.alt}

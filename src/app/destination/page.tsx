@@ -38,15 +38,20 @@ export default async function Destination({
     <>
       <Background page="destination" />
       <main className={clsx("page-container", styles.container)}>
+        <h3 className="current-page">
+          <span>01</span>pick your destination
+        </h3>
         <TabImage
           img={imageData}
           activeTab={currentTab}
           className={styles.carousel__img}
+          variant="Square"
         />
         <TabNav
           tabs={destinationsArr}
           activeTab={tab}
           className={styles.carousel__controls}
+          variant="name"
         />
         <TabPanel
           activeTab={currentTab}

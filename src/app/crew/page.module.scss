@@ -37,11 +37,6 @@
   @include t.subheading;
 }
 
-.card__name {
-  text-transform: uppercase;
-  @include t.heading;
-}
-
 .card__bio {
   grid-row: 2/3;
   @include t.body;
@@ -61,30 +56,10 @@
   }
 }
 
-.btn {
-  background-color: rgb(from v.$color-white r g b / 0.2);
-  border: none;
-  border-radius: 50%;
-  height: 11px;
-  width: 10px;
-
-  &:hover {
-    background-color: rgb(from v.$color-white r g b / 0.5);
-    cursor: pointer;
-  }
-}
-
-.btn__Active {
-  background-color: v.$color-white;
-}
-
 .img__container {
-  height: clamp(21.25rem, 8.1298rem + 55.9796vw, 35rem);
   justify-items: center;
   margin-block-start: v.$sp-8;
-  @include mq.md {
-    height: clamp(35rem, 22.5714rem + 25.8929vw, 45.875rem);
-  }
+
   @include mq.lg {
     grid-area: 1/2/4/-1;
     width: 50%;

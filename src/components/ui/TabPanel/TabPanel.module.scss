@@ -21,9 +21,18 @@
   @include t.destination-title;
 }
 
+.panel__headingSmall {
+  text-transform: uppercase;
+  @include t.heading;
+}
+
+.panel__subheading {
+  text-transform: uppercase;
+  @include t.subheading;
+}
+
 .panel__body {
   @include t.body;
-  grid-row: 2 / 3;
 }
 
 .dataFacts__container {
