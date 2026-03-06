@@ -48,6 +48,7 @@ export default function Header() {
               <Link
                 href="/"
                 className={clsx(pathname === "/" && styles.nav__active)}
+                onClick={toggleMenu}
               >
                 <span aria-hidden>00</span> Home{" "}
                 <span className="visually-hidden">
@@ -61,6 +62,7 @@ export default function Header() {
                 className={clsx(
                   pathname === "/destination" && styles.nav__active,
                 )}
+                onClick={toggleMenu}
               >
                 <span aria-hidden>01</span> Destination{" "}
                 <span className="visually-hidden">
@@ -83,6 +85,7 @@ export default function Header() {
                 className={clsx(
                   pathname === "/technology" && styles.nav__active,
                 )}
+                onClick={toggleMenu}
               >
                 <span aria-hidden>03</span> Technology{" "}
                 <span className="visually-hidden">- check out our tech</span>

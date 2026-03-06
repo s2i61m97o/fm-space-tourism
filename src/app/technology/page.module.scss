@@ -3,9 +3,11 @@
 @use "../../styles/sass/breakpoints" as mq;
 
 .container {
-  align-items: center;
-  grid-template-columns: max-content 40vw 40vw;
-  grid-template-rows: min-content 40vh 10vh;
+  @include mq.lg {
+    align-items: center;
+    grid-template-columns: max-content 40vw 40vw;
+    grid-template-rows: min-content 40vh 10vh;
+  }
 }
 
 .tabNav {
