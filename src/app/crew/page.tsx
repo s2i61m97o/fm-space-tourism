@@ -38,9 +38,23 @@ export default async function Crew({
         <h3 className="current-page">
           <span>02</span>meet your crew
         </h3>
-        <TabPanel activeTab={currentTab} data={normalisedData} />
-        <TabNav activeTab={tab} tabs={crewArr} variant="dot" />
-        <TabImage activeTab={currentTab} img={imageData} variant="Portrait" />
+        <TabPanel
+          activeTab={currentTab}
+          data={normalisedData}
+          className={styles.tabPanel}
+        />
+        <TabNav
+          activeTab={tab}
+          tabs={crewArr}
+          variant="dot"
+          className={styles.tabNav}
+        />
+        <TabImage
+          activeTab={currentTab}
+          img={imageData}
+          variant="Portrait"
+          className={styles.tabImage}
+        />
       </main>
     </>
   );

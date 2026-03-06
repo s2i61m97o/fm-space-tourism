@@ -5,91 +5,31 @@
 .container {
   @include mq.lg {
     grid-template-columns: 50% 50%;
-    grid-template-rows: max-content auto auto;
+    grid-template-rows: max-content auto min-content;
     text-align: left;
   }
 }
 
-.crew__container {
+.tabPanel {
   @include mq.lg {
     grid-area: 2/1/3/2;
     justify-items: start;
-    align-self: stretch;
+    align-self: center;
   }
 }
 
-.crew__card {
-  display: grid;
-  grid-row: span 2;
-  grid-template-rows: subgrid;
-  max-width: 552px;
-  justify-self: center;
-  margin-block-start: v.$sp-10;
-  margin-inline-end: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+.tabImage {
   @include mq.lg {
-    justify-self: left;
-    grid-template-rows: max-content;
+    grid-area: 2/2/4/3;
+
+    div {
+      justify-self: start;
+    }
   }
 }
 
-.card__role {
-  text-transform: uppercase;
-  @include t.subheading;
-}
-
-.card__bio {
-  grid-row: 2/3;
-  @include t.body;
+.tabNav {
   @include mq.lg {
-    grid-row: unset;
+    align-self: center;
   }
-}
-
-.btn__container {
-  display: flex;
-  gap: v.$sp-4;
-  z-index: 1;
-  @include mq.lg {
-    grid-column: 1;
-    justify-self: start;
-    margin-block-end: v.$sp-12;
-  }
-}
-
-.img__container {
-  justify-items: center;
-  margin-block-start: v.$sp-8;
-
-  @include mq.lg {
-    grid-area: 1/2/4/-1;
-    width: 50%;
-  }
-}
-
-.img {
-  height: 100%;
-  justify-self: center;
-  width: auto;
-  @include mq.lg {
-    justify-self: left;
-  }
-}
-
-.mask__container {
-  height: 100%;
-  position: relative;
-  width: 100%;
-  @include mq.lg {
-    justify-self: left;
-    width: 50%;
-  }
-}
-
-.img__mask {
-  background: linear-gradient(180deg, transparent 77%, v.$color-blue-950 100%);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
 }
