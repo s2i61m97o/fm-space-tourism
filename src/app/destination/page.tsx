@@ -1,126 +1,58 @@
-"use client";
 import Background from "@/components/layout/Background/Background";
 import styles from "./page.module.scss";
-import Image from "next/image";
 import type {Destination, DestinationList} from "@/types/destinations";
 import data from "@/data/destination.json";
-import {Images} from "@/assets/destination";
-import {useState, useRef, useEffect} from "react";
 import clsx from "clsx";
-import {handleTabChange} from "@/utilities/handleTabChange";
+import TabNav from "@/components/ui/TabNav/TabNav";
+import {TabPanel} from "@/components/ui/TabPanel/TabPanel";
+import TabImage from "@/components/ui/TabImage/TabImage";
 
-export default function Destination() {
+export default async function Destination({
+  searchParams,
+}: {
+  searchParams: Promise<{tab?: DestinationList}>;
+}) {
   const destinationData = data as Destination[];
   const destinationsArr: DestinationList[] = destinationData.map((d) => d.name);
+  const {tab = destinationsArr[0]} = await searchParams;
+  const currentTab = destinationsArr.indexOf(tab);
 
-  const [current, setCurrent] = useState<Destination["name"]>(
-    destinationsArr[0],
-  );
-
-  const isMounted = useRef(false);
-
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-
-  useEffect(() => {
-    if (!isMounted.current) {
-      isMounted.current = true;
-      return;
-    }
-    const index = destinationsArr.findIndex((d) => d === current);
-    tabRefs.current[index]?.focus();
-  }, [destinationsArr, current]);
-
-  const imageElements = data.map((destination) => {
-    const destinationName = destination.name as Destination["name"];
-
-    return (
-      <Image
-        key={destination.name}
-        src={Images[destinationName].src}
-        fill
-        sizes="(min-width:1024px) 33vw, 40vw"
-        className={clsx(styles.img, destination.name === current && "active")}
-        placeholder="blur"
-        blurDataURL={Images[destinationName].blurDataURL}
-        alt={destination.image_alt}
-      />
-    );
+  const normalisedData = destinationData.map((d) => {
+    return {
+      heading: d.name,
+      body: d.description,
+      dataFacts: Object.entries(d.data).map(([key, value]) => {
+        return {title: key, value: value};
+      }),
+    };
   });
 
-  const contentElements = data.map((destination) => {
-    return (
-      <div
-        aria-hidden={destination.name !== current ? true : false}
-        aria-labelledby={`#${destination.name}Control`}
-        className={clsx(
-          styles.content,
-          destination.name === current && "active",
-        )}
-        id={`${destination.name}Content`}
-        key={destination.name}
-        role="tabpanel"
-        tabIndex={destination.name === current ? 0 : -1}
-      >
-        <h1 className={styles.content__title}>{destination.name}</h1>
-        <p className={styles.content__description}>{destination.description}</p>
-        <hr className={styles.content__break} />
-        <div className={styles.content__extra}>
-          <p>
-            avg distance <span>{destination.distance}</span>
-          </p>
-          <p>
-            est. travel time <span>{destination.travel}</span>
-          </p>
-        </div>
-      </div>
-    );
+  const imageData = destinationData.map((d) => {
+    return {
+      title: d.name,
+      img: d.img,
+    };
   });
 
   return (
     <>
       <Background page="destination" />
       <main className={clsx("page-container", styles.container)}>
-        <h3 className="current-page">
-          <span>01</span>pick your destination
-        </h3>
-        <div className={styles.img__container}>{imageElements}</div>
-        <div className={styles.btn__container} role="tablist">
-          {destinationsArr.map((d, index) => {
-            return (
-              <button
-                aria-controls={`#${d}Content`}
-                aria-selected={d === current ? true : false}
-                className={clsx(
-                  styles.button,
-                  d === current && styles.buttonActive,
-                )}
-                id={`${d}Control`}
-                key={d}
-                onClick={() => setCurrent(d)}
-                onKeyDown={(e) =>
-                  handleTabChange(e, setCurrent, index, destinationsArr)
-                }
-                role="tab"
-                tabIndex={d === current ? 0 : -1}
-                ref={(el) => {
-                  tabRefs.current[index] = el;
-                }}
-              >
-                {d}
-              </button>
-            );
-          })}
-        </div>
-        <div
-          className={styles.content__container}
-          style={
-            {
-              "--destination-index": destinationsArr.indexOf(current),
-            } as React.CSSProperties
-          }
-        >
-          {contentElements}
-        </div>
+        <TabImage
+          img={imageData}
+          activeTab={currentTab}
+          className={styles.carousel__img}
+        />
+        <TabNav
+          tabs={destinationsArr}
+          activeTab={tab}
+          className={styles.carousel__controls}
+        />
+        <TabPanel
+          activeTab={currentTab}
+          data={normalisedData}
+          className={styles.carousel__panel}
+        />
       </main>
     </>
   );

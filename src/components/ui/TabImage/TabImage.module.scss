@@ -1,0 +1,28 @@
+@use "../../../styles/sass/breakpoints" as mq;
+@use "../../../styles/sass/typography" as t;
+@use "../../../styles/sass/variables" as v;
+
+.img__container {
+  height: clamp(150px, 0.4294rem + 38.1679vw, 300px);
+  grid-row: 2/3;
+  justify-self: center;
+  margin-block: v.$sp-6;
+  position: relative;
+  width: clamp(150px, 0.4294rem + 38.1679vw, 300px);
+  @include mq.md {
+    height: clamp(300px, 5.8929rem + 26.7857vw, 480px);
+    width: clamp(300px, 5.8929rem + 26.7857vw, 480px);
+  }
+  @include mq.lg {
+    grid-row: span 2;
+  }
+}
+
+.img {
+  height: auto;
+  //   width: clamp(150px, 0.4294rem + 38.1679vw, 300px);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}

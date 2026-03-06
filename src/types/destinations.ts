@@ -2,8 +2,13 @@ export type DestinationList = "moon" | "mars" | "europa" | "titan";
 
 export interface Destination {
   name: DestinationList;
-  image_alt: string;
   description: string;
-  distance: string;
-  travel: string;
+  data: {
+    avg_distance: string;
+    est_travel_time: string;
+  };
+  img: {
+    src: string;
+    alt: string;
+  };
 }

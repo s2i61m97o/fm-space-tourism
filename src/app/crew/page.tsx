@@ -3,9 +3,9 @@ import clsx from "clsx";
 import styles from "./page.module.scss";
 import Background from "@/components/layout/Background/Background";
 import {data} from "@/data/crew";
-import {crewImages} from "@/assets/crew";
+import {crewImages} from "../../../public/assets/crew";
 import {useState, useRef, useEffect} from "react";
-import {handleTabChange} from "@/utilities/handleTabChange";
+import {handleTabChange} from "@/utilities/keyboardTabChange";
 import Image from "next/image";
 import type {CrewMembers, Replace} from "@/types/crew";
 

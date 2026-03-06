@@ -1,0 +1,30 @@
+@use "../../../styles/sass/breakpoints" as mq;
+@use "../../../styles/sass/typography" as t;
+@use "../../../styles/sass/variables" as v;
+
+.btn__container {
+  display: flex;
+  gap: v.$sp-8;
+  z-index: 10;
+  @include mq.lg {
+    justify-self: left;
+  }
+}
+
+.button {
+  background: none;
+  border: none;
+  padding-inline: 0;
+  text-transform: uppercase;
+  @include t.destination-btn;
+  &:hover {
+    cursor: pointer;
+    color: v.$color-white;
+    border-block-end: 3px solid rgb(from v.$color-white r g b / 0.5);
+  }
+}
+
+.buttonActive {
+  color: v.$color-text-primary;
+  border-block-end: 3px solid v.$color-white;
+}

@@ -1,0 +1,52 @@
+@use "../../../styles/sass/breakpoints" as mq;
+@use "../../../styles/sass/typography" as t;
+@use "../../../styles/sass/variables" as v;
+
+.panel {
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
+  max-width: 512px;
+  justify-self: center;
+  margin-inline-end: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
+  @include mq.lg {
+    justify-self: left;
+    text-align: left;
+    max-width: 455px;
+  }
+}
+.panel__heading {
+  text-transform: uppercase;
+  grid-row: 1 / 2;
+  @include t.destination-title;
+}
+
+.panel__body {
+  @include t.body;
+  grid-row: 2 / 3;
+}
+
+.dataFacts__container {
+  display: grid;
+  gap: v.$sp-6;
+  text-transform: uppercase;
+  @include mq.sm {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dataFact {
+  display: grid;
+}
+
+.dataFact__title {
+  @include t.extra-info-title;
+}
+
+.dataFact__value {
+  @include t.extra-info-content;
+}
+
+.contentBreak {
+  border: 1px solid rgb(from v.$color-white r g b / 0.25);
+}

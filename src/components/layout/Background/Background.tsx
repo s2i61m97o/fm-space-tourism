@@ -1,4 +1,4 @@
-import {backgroundMap} from "@/assets/backgrounds";
+import {backgroundMap} from "../../../../public/assets/backgrounds";
 import styles from "./Background.module.scss";
 
 type PageName = "home" | "destination" | "crew" | "technology";
