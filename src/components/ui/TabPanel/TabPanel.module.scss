@@ -6,7 +6,7 @@
   display: grid;
   grid-row: span 4;
   grid-template-rows: subgrid;
-  max-width: 540px;
+  max-width: 34vw;
   justify-self: center;
   margin-inline-end: clamp(v.$sp-6, 0.5458rem + 4.0712vw, v.$sp-10);
   @include mq.lg {

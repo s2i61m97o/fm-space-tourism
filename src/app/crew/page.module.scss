@@ -2,6 +2,10 @@
 @use "../../styles/sass/typography" as t;
 @use "../../styles/sass/breakpoints" as mq;
 
+.currentPage {
+  grid-column: span 1;
+}
+
 .container {
   @include mq.lg {
     grid-template-columns: 50% 50%;
@@ -20,7 +24,7 @@
 
 .tabImage {
   @include mq.lg {
-    grid-area: 2/2/4/3;
+    grid-area: 1/2/4/3;
 
     div {
       justify-self: start;

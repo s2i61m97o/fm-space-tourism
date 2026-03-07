@@ -23,7 +23,7 @@
   @include mq.lg {
     grid-row: span 1;
     grid-column: span 2;
-    margin-block-end: v.$sp-20;
+    margin-block-end: v.$sp-10;
   }
 
   span {
@@ -44,8 +44,10 @@
   text-align: center;
   overflow: hidden;
   @include mq.lg {
-    padding-inline-start: v.$sp-40;
+    padding-inline-start: clamp(v.$sp-10, -15.9615rem + 28.8462vw, v.$sp-40);
     padding-block-start: 0;
+    position: relative;
+    right: 0;
   }
 }
 

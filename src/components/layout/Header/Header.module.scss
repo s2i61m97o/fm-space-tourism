@@ -75,7 +75,7 @@
   }
 
   @include mq.md {
-    padding: 0 v.$sp-10 0 v.$sp-30;
+    padding: 0 v.$sp-10 0 clamp(v.$sp-20, -10rem + 31.25vw, v.$sp-40);
     position: static;
     transform: translate(0);
     visibility: visible;
