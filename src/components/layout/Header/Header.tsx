@@ -74,6 +74,7 @@ export default function Header() {
               <Link
                 href="/crew"
                 className={clsx(pathname === "/crew" && styles.nav__active)}
+                onClick={toggleMenu}
               >
                 <span aria-hidden>02</span> Crew{" "}
                 <span className="visually-hidden">- meet our crew</span>
