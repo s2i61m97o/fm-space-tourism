@@ -4,6 +4,7 @@ import styles from "./TabNav.module.scss";
 import {usePathname, useRouter} from "next/navigation";
 import {useEffect, useRef} from "react";
 import {keyboardTabChange} from "@/utilities/keyboardTabChange";
+import useSwipeNavigation from "@/hooks/useSwipeNavigation";
 
 export default function TabNav({
   tabs,
@@ -34,6 +35,8 @@ export default function TabNav({
     const index = tabs.findIndex((t) => t === activeTab);
     tabRefs.current[index]?.focus();
   }, [activeTab, tabs]);
+
+  useSwipeNavigation(tabs, tabs.indexOf(activeTab), handleTabChange);
 
   const buttonClasses = {
     name: {
