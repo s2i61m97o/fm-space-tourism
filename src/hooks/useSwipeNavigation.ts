@@ -6,23 +6,22 @@ export default function useSwipeNavigation(
   activeTab: number,
   handleTabChange: (newActive: string) => void,
 ) {
-  const total = tabs.length;
-  const handleSwipe = (direction: string) => {
-    let newIndexTitle;
-    if (direction === "left") {
-      newIndexTitle = tabs.at((activeTab + 1 + total) % total);
-    }
-    if (direction === "right") {
-      newIndexTitle = tabs.at((activeTab - 1 + total) % total);
-    }
-    if (newIndexTitle === undefined) {
-      newIndexTitle = tabs[0];
-    }
-
-    handleTabChange(newIndexTitle);
-  };
-
   useEffect(() => {
+    const total = tabs.length;
+    const handleSwipe = (direction: string) => {
+      let newIndexTitle;
+      if (direction === "left") {
+        newIndexTitle = tabs.at((activeTab + 1 + total) % total);
+      }
+      if (direction === "right") {
+        newIndexTitle = tabs.at((activeTab - 1 + total) % total);
+      }
+      if (newIndexTitle === undefined) {
+        newIndexTitle = tabs[0];
+      }
+
+      handleTabChange(newIndexTitle);
+    };
     const handleSwipeEvent = (e: Event) => {
       const customEvent = e as CustomEvent<SwipedEventDetail>;
       handleSwipe(customEvent.detail.dir);
@@ -33,5 +32,5 @@ export default function useSwipeNavigation(
     });
 
     return () => window.removeEventListener("swiped", handleSwipeEvent);
-  });
+  }, [activeTab, tabs, handleTabChange]);
 }

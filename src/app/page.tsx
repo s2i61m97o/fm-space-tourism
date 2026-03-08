@@ -12,14 +12,14 @@ export default function Home() {
           <h1 className={styles.hero__title}>space</h1>
           <p>
             Let&apos;s face it; if you want to go to space, you might as well
-            genuinely got to outer space and not nhover kind of on the edge of
+            genuinely got to outer space and not hover kind of on the edge of
             it. Well sit back and relax because we&apos;ll give you a truly out
             of this world experience!
           </p>
         </section>
         <div className={styles.explore__container}>
           <Link href="/destination" className={styles.explore__link}>
-            <div className={styles.explore__btn}>explore</div>
+            <span className={styles.explore__btn}>explore</span>
           </Link>
         </div>
       </main>
