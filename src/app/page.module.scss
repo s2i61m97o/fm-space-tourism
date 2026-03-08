@@ -65,6 +65,9 @@
   justify-content: center;
   width: clamp(9rem, 6.1831rem + 12.0188vw, 17rem);
   transition: all 250ms ease-in;
+  @media (prefers-reduced-motion: reduced) {
+    transition: none;
+  }
 
   &:hover {
     box-shadow: 0 0 0 v.$sp-20 rgb(from v.$color-white r g b / 0.15);
