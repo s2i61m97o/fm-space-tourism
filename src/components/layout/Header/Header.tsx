@@ -14,6 +14,8 @@ export default function Header() {
   const {open, toggleOpen} = useContext(MenuContext);
   const pathname = usePathname();
 
+  const breakpointMd = useBreakpoint(BREAKPOINTS.md);
+
   useEffect(() => {
     function handleKeydown(e: KeyboardEvent) {
       if (e.key === "Escape") toggleOpen();
@@ -47,7 +49,7 @@ export default function Header() {
           styles.nav__container,
           open && styles.nav__containerOpen,
         )}
-        inert={useBreakpoint(BREAKPOINTS.md) && !open}
+        inert={breakpointMd && !open}
       >
         <nav className={styles.nav__menu}>
           <ul>

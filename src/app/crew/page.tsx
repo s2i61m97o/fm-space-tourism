@@ -34,7 +34,7 @@ export default async function Crew({
   return (
     <>
       <Background page="crew" />
-      <main className={clsx("page-container", styles.container)}>
+      <section className={clsx("page-container", styles.container)}>
         <h3 className={clsx("current-page", styles.currentPage)}>
           <span>02</span>meet your crew
         </h3>
@@ -55,7 +55,7 @@ export default async function Crew({
           variant="Portrait"
           className={styles.tabImage}
         />
-      </main>
+      </section>
     </>
   );
 }

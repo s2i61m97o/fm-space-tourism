@@ -35,7 +35,7 @@ export default async function Technology({
   return (
     <>
       <Background page="technology" />
-      <main className={clsx("page-container", styles.container)}>
+      <section className={clsx("page-container", styles.container)}>
         <h3 className="current-page">
           <span>03</span>space launch 101
         </h3>
@@ -56,7 +56,7 @@ export default async function Technology({
           activeTab={currentTab}
           className={styles.tabPanel}
         />
-      </main>
+      </section>
     </>
   );
 }

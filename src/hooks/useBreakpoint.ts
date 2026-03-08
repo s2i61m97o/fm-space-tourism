@@ -5,7 +5,7 @@ export default function useBreakpoint(breakpoint: number): boolean {
   const [isAbove, setIsAbove] = useState<boolean>(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(`min-width: ${breakpoint}px`);
+    const mediaQuery = window.matchMedia(`(min-width: ${breakpoint}px)`);
     function handleChange(e: MediaQueryListEvent) {
       setIsAbove(e.matches);
     }

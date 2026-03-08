@@ -37,7 +37,7 @@ export default async function Destination({
   return (
     <>
       <Background page="destination" />
-      <main className={clsx("page-container", styles.container)}>
+      <section className={clsx("page-container", styles.container)}>
         <h3 className="current-page">
           <span>01</span>pick your destination
         </h3>
@@ -58,7 +58,7 @@ export default async function Destination({
           data={normalisedData}
           className={styles.tabPanel}
         />
-      </main>
+      </section>
     </>
   );
 }
